@@ -1,0 +1,273 @@
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px){
+    .container{
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+    }
+
+    .home{
+        &-img{
+            width: 220px;
+            justify-self: left;
+            
+        }
+       
+        &-title{
+            font-size: var(--h1-font-size);
+        }
+    }
+
+    .guide{
+        &-bg{
+            padding: 2rem 1rem;
+        }
+        &-card{
+            padding: 1.5rem;
+        }
+    }
+
+    .catalog{
+        &-content{
+            grid-template-columns: repeat(1, minmax(130px, 1fr));
+        }
+        &-img{
+            min-height: 110px;
+            width: 130px;
+        }
+    }
+
+
+}
+@media screen and (max-width: 400px){
+    .catalog {
+        &-svg{
+            width: .6rem;
+            height: .6rem;
+        }
+        &-price{
+            font-size: .6rem;
+        }
+    }
+}
+@media screen and (max-width: 760px){
+    .home{
+        &-img{
+            width: 90%;
+            justify-self: left;
+            
+        }
+       
+        &-data{
+            width: 90%;
+            justify-self: left;
+        }
+    }
+}
+/* For medium devices */
+@media screen and (min-width: 576px){
+    
+    .guide{
+        &-container{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .catalog{
+        &-description{
+            padding: 0 4rem;
+        }
+        &-content{
+            grid-template-columns: repeat(3, minmax(160px, 1fr));
+        }
+        &-img{
+            min-height: 130px;
+            width: 160px;
+        }
+    }
+
+    .footer-subscribe{
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 767px){
+    body{
+        margin: 0;
+    }
+
+    .nav{
+        height: calc(var(--header-height) + 1.5rem);
+        column-gap: 3rem;
+
+        &-toggle,
+        &-close{
+            display: none;
+        }
+        &-menu{
+            margin-left: auto;
+        }
+        &-list{
+            flex-direction: row;
+            column-gap: 3rem;
+        }
+    }
+    
+    .home-container,
+    .about-container,
+    .questions-container,
+    .contact-container,
+    .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home{
+        padding: 10rem 0 5rem;
+        
+        &-container{
+            align-items: center;
+        }
+        &-img{
+            width: 280px;
+            order: 1;
+        }
+        &-social{
+            top: 30%;
+        }
+    }
+
+    .questions-container{
+        align-items: flex-start;
+    }
+
+    .footer{
+        &-container{
+            column-gap: 3rem;
+        }
+        &-subscribe{
+            width: initial;
+        }
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px){
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section{
+        padding: 8rem 0 1rem;
+
+        &-title, 
+        &-title-center{
+            font-size: var(--h1-font-size);
+        }
+    }
+
+    .home{
+        padding: 13rem 0 5rem;
+
+        &-img{
+            width: 350px;
+        }
+        &-description{
+            padding-right: 7rem;
+        }
+    }
+
+    // .about-img{
+    //     width: 100%;
+    // }
+
+    .guide{
+        &-container{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &-bg{
+            padding: 3.5rem 2.5rem;
+        }
+        &-card-title{
+            font-size: var(--normal-font-size);
+        }
+    }
+
+    .catalog{
+        &-description{
+            padding: 0 16rem;
+        }
+        
+        &-title,
+        &-price{
+            font-size: var(--smaller-font-size);
+        }
+    }
+
+    .questions{
+        &-container{
+            padding: 1rem 0 4rem;
+        }
+        &-title{
+            text-align: initial;
+        }
+        &-group{
+            row-gap: 2rem;
+        }
+        &-header{
+            padding: 1rem;
+        }
+        &-description{
+            padding: 0 3.5rem 2.25rem 2.75rem;
+        }
+    }
+
+    .footer{
+        &-logo{
+            font-size: var(--h3-font-size);
+        }
+        &-container{
+            grid-template-columns: 1fr .5fr .5fr .5fr;
+        }
+        &-copy{
+            margin: 7rem 0 2rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .home{
+        &-social{
+            right: -3rem;
+            row-gap: 4.5rem;
+
+            &-follow{
+                font-size: var(--small-font-size);
+
+                &::after{
+                    width: 1.5rem;
+                    right: -60%;
+                }
+            }
+            &-link{
+                font-size: 1.15rem;
+            }
+        }
+    }
+    .catalog{
+        &-content{
+            grid-template-columns: repeat(3, minmax(210px, 1fr));
+        }
+        &-img{
+            min-height: 180px;
+            width: 210px;
+        }
+    }
+
+    .about-container{
+        column-gap: 7rem;
+    }
+
+    .scrollup{
+        right: 3rem;
+    }
+}

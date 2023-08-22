@@ -1,0 +1,49 @@
+/*=============== guide ===============*/
+.guide{
+    &-bg{
+        background-color: var(--first-color);
+        padding: 3rem 2rem 2rem;
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 6rem;
+    }
+    &-container{
+        gap: 2rem;
+        padding-top: 1rem;
+    }
+    &-title{
+        color: #FFF;
+    }
+    &-card{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--container-color);
+        padding: 2rem 1.5rem;
+        border-radius: 3rem;
+
+
+        &:hover .guide-card-number{
+            transform: translateY(-.25rem);
+        }
+
+        &-number{
+            width: fit-content;
+            justify-self: center;
+            align-self: center;
+            background-color: var(--first-color-alt);
+            color: #FFF;
+            padding: .2rem .5rem;
+            border-radius: .8rem;
+            font-size: var(--h2-font-size);
+            margin-bottom: var(--mb-1);
+            transition: .3s;
+        }
+        &-title{
+            font-size: var(--h3-font-size);
+            text-align: center;
+            margin-bottom: var(--mb-0-5);
+        }
+        &-description{
+            font-size: var(--small-font-size);
+        }
+    }
+}

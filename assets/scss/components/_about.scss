@@ -1,0 +1,37 @@
+/*=============== ABOUT ===============*/
+.about{
+    &-container{
+        row-gap: 2rem;
+    }
+    &-img{
+        flex: 1 1 0;
+        justify-self: center;
+    }
+    &-title{
+        margin-bottom: var(--mb-1);
+    }
+    &-description{
+        display: grid;
+        margin-bottom: var(--mb-2);
+        row-gap: 5px;
+    }
+    &-details{
+        display: grid;
+        row-gap: 1rem;
+        margin-bottom: var(--mb-2-5);
+
+        &-description{
+            display: inline-flex;
+            column-gap: .5rem;
+            font-size: var(--small-font-size);
+        }
+        &-icon{
+            font-size: 1rem;
+            width: 1rem;
+            height: 1rem;
+            fill: var(--first-color);
+            margin-top: .15rem;
+
+        }
+    }
+}

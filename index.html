@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="/assets/css/style.css">
+
+        <title>Bridegap Clothing</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav-logo">
+                    <svg class="nav-logo-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M56.813 18.438c-.47-.005-.938.014-1.407.03-.625.023-1.252.066-1.875.126-7.468.72-14.682 4.148-22.31 11.125-9.985 9.128-12.863 17.66-11.407 27.718 1.455 10.056 8.353 22.236 21.125 34.906 2.895 2.872 6.126 5.737 9.593 8.625 1.27 1.055 2.565 2.13 3.907 3.186 1.122.882 2.266 1.775 3.438 2.656.232.175.454.358.688.532C74.71 119.38 95.558 131.28 120.25 142.22c159.723 161.31 288.815 297.553 374.594 352.124-51.11-85.624-187.432-214.62-350-375.531-10.23-23.802-21.115-43.71-32.094-59.282 35.46-10.19 82.517-2.294 125.75 40.94 40.243 40.242 52.642 90.776 41.375 128.343 4.89 4.914 9.883 9.913 14.688 14.75 19.07-46.1 4.573-108.895-42.844-156.313-35.694-35.693-75.48-50.324-111.032-50.22-1.147.005-2.3.03-3.438.064-21.844.65-41.957 6.898-58.344 17.187-2.884 1.812-5.663 3.757-8.312 5.814 1.33 3.094 2.758 5.884 4.406 8.218 1.92 2.72 4.004 4.936 6.906 6.688 2.202-1.717 4.498-3.375 6.938-4.906 1.063-.668 2.145-1.34 3.25-1.97 8.196 10.088 15.465 24.624 25.47 47.25-23.907-10.568-38.822-18.04-49.033-27 .024-.03.04-.063.064-.093-.433-.33-.867-.655-1.28-1-.013-.008-.022-.02-.033-.03-11.215-10.375-16.532-22.934-22.31-44.5 5.988 1.605 11.256 3.19 16 4.844 8.53-6.46 17.51-11.71 26.81-15.875-9.5-7.738-18.552-11.93-26.686-12.97-1.443-.185-2.87-.3-4.282-.313zM493.28 64.374c-77.985 0-125.587 28.886-146.124 69.406-20.536 40.52-13.994 90.39 9.688 131.407 11.385 19.72 17.807 40.687 19.187 61.22 6.27 6.475 12.425 12.867 18.47 19.187 2.31-29.955-5.072-61.35-21.47-89.75-21.13-36.602-26.155-80.112-9.186-113.594 16.97-33.481 55.94-59.188 129.437-59.188V64.376zM37.907 114.938c-2.894 23.925 6.18 50.21 29.532 73.562l13.218-13.188c-15.97-15.97-23.188-31.833-24.437-46.593-6.646-4.51-12.754-9.102-18.314-13.782zM124.062 277c-24.466-.028-45.04 4.92-61.343 13.656-24.842 13.31-39.363 35.865-40.75 60.47-2.78 49.207 44.38 102.65 140.405 118.28 101.63 16.544 170.303-9.184 205.406-54.062 1.01-1.29 1.988-2.59 2.94-3.906-4.552-4.232-9.148-8.52-13.783-12.875-1.233 1.79-2.52 3.55-3.875 5.28-29.97 38.315-90.355 62.97-187.687 47.126-90.394-14.715-126.796-62.527-124.75-98.783 1.023-18.127 10.982-34.37 30.938-45.062 19.955-10.692 50.267-15.364 90.5-7.47 34.077 6.69 62.938 3.47 85.437-6.936-4.72-4.65-9.49-9.33-14.28-14.064-17.545 6.452-39.89 8.088-67.564 2.656-14.895-2.923-28.778-4.297-41.594-4.312z"></path></svg> Bridgegap
+                </a>
+
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
+                        </li>
+                        <div class="dropdown">
+                            <li class="nav-link">Catalog</li>
+                            <div class="dropdown-content">
+                                <a href="#men">Men</a>
+                                <a href="#women">Women</a>
+                                <a href="#students">Students</a>
+                            </div>
+                        </div>
+                        <li class="nav-item">
+                            <a href="#faqs" class="nav-link">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact Us</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav-btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <div class="nav-toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <div class="home-container container grid">
+                    <img src="https://media.istockphoto.com/id/1394917847/photo/tailor-working-on-custom-made-suit.jpg?s=612x612&w=0&k=20&c=MncTHP0QhpAt56yZ8y64Kw2ZPoWpLoLUe1wi0eeeGyo=" alt="" class="home-img">
+
+                    <div class="home-data">
+                        <h1 class="home-title">
+                            Discover, <br> Your Signature Look<br>
+                        </h1>
+                        <span class="home-subtitle"></span>
+                        <p class="home-description">
+                            We're dedicated to crafting more than just clothes –
+                             we create pieces that resonate with your essence
+                        </p>
+                        <a href="#about" class="button button--flex">
+                            Explore <i class="ri-arrow-right-down-line button-icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="home-social">
+                        <span class="home-social-follow">Contact Us</span>
+
+                        <div class="home-social-links">
+                            <a href="https://www.facebook.com/" target="_blank" class="home-social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="home-social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="home-social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section container" id="about">
+                <div class="about-container grid">
+                    <img class="about-img" src="/assets/img/tailor.png" alt="">
+
+                    <div class="about-data">
+                        <h2 class="section-title about-title">
+                            Who we really are & <br> why choose us
+                        </h2>
+
+                        <div class="about-description">
+                            <p>
+                                At Bridgegap Clothings,
+                                 Our designs aren't just garments; they're expressions
+                                   of your personality and style.   
+                            </p>
+                            <p>
+                                From tailored suits that exude confidence to
+                                stunning bridal gowns and captivating native attire,
+                                 any design you could imagine
+                            </p>
+                            <p>You just think it and we design it!</p>
+                        </div>
+
+                        <div class="about-details">
+                            <p class="about-details-description">
+                                <svg class="about-details-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20.995,6.9c-0.034-0.342-0.241-0.642-0.548-0.795l-8-4c-0.281-0.141-0.613-0.141-0.895,0l-8,4 C3.246,6.259,3.039,6.559,3.005,6.9c-0.011,0.107-0.961,10.767,8.589,15.014C11.723,21.972,11.861,22,12,22 s0.277-0.028,0.406-0.086C21.956,17.667,21.006,7.008,20.995,6.9z M12,19.897C5.231,16.625,4.911,9.642,4.966,7.635L12,4.118 l7.029,3.515C19.066,9.622,18.701,16.651,12,19.897z"></path><path d="M11 12.586L8.707 10.293 7.293 11.707 11 15.414 16.707 9.707 15.293 8.293z"></path></svg>
+                                Expert Tailors, Exceptional Couture
+                            </p>
+                            <p class="about-details-description">
+                                <svg class="about-details-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20.995,6.9c-0.034-0.342-0.241-0.642-0.548-0.795l-8-4c-0.281-0.141-0.613-0.141-0.895,0l-8,4 C3.246,6.259,3.039,6.559,3.005,6.9c-0.011,0.107-0.961,10.767,8.589,15.014C11.723,21.972,11.861,22,12,22 s0.277-0.028,0.406-0.086C21.956,17.667,21.006,7.008,20.995,6.9z M12,19.897C5.231,16.625,4.911,9.642,4.966,7.635L12,4.118 l7.029,3.515C19.066,9.622,18.701,16.651,12,19.897z"></path><path d="M11 12.586L8.707 10.293 7.293 11.707 11 15.414 16.707 9.707 15.293 8.293z"></path></svg>
+                                Custom Tailoring: Perfect Fit for Your Style
+                            </p>
+                            <p class="about-details-description">
+                                <svg class="about-details-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20.995,6.9c-0.034-0.342-0.241-0.642-0.548-0.795l-8-4c-0.281-0.141-0.613-0.141-0.895,0l-8,4 C3.246,6.259,3.039,6.559,3.005,6.9c-0.011,0.107-0.961,10.767,8.589,15.014C11.723,21.972,11.861,22,12,22 s0.277-0.028,0.406-0.086C21.956,17.667,21.006,7.008,20.995,6.9z M12,19.897C5.231,16.625,4.911,9.642,4.966,7.635L12,4.118 l7.029,3.515C19.066,9.622,18.701,16.651,12,19.897z"></path><path d="M11 12.586L8.707 10.293 7.293 11.707 11 15.414 16.707 9.707 15.293 8.293z"></path></svg>
+                                Unmatched Quality: Superior Craftsmanship
+                            </p>
+                            <p class="about-details-description">
+                                <svg class="about-details-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20.995,6.9c-0.034-0.342-0.241-0.642-0.548-0.795l-8-4c-0.281-0.141-0.613-0.141-0.895,0l-8,4 C3.246,6.259,3.039,6.559,3.005,6.9c-0.011,0.107-0.961,10.767,8.589,15.014C11.723,21.972,11.861,22,12,22 s0.277-0.028,0.406-0.086C21.956,17.667,21.006,7.008,20.995,6.9z M12,19.897C5.231,16.625,4.911,9.642,4.966,7.635L12,4.118 l7.029,3.515C19.066,9.622,18.701,16.651,12,19.897z"></path><path d="M11 12.586L8.707 10.293 7.293 11.707 11 15.414 16.707 9.707 15.293 8.293z"></path></svg>
+                                Unveil Individuality, Fashion Made Personal
+                            </p>
+                        </div>
+
+                        <a href="#catalogue" class="button--link button--flex">
+                            View Items <i class="ri-arrow-right-down-line button-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== guide ====================-->
+            <section class="guide section container">
+                <div class="guide-bg">
+                    <h2 class="section-title-center guide-title">
+                        Guide to steer you in  <br> right direction ✈
+                    </h2>
+
+                    <div class="guide-container grid">
+                        <div class="guide-card">
+                            <div class="guide-card-number">Step 1</div>
+                            <h3 class="guide-card-title">Choose Category</h3>
+                            <p class="guide-card-description">
+                                We have several Categories you can choose : Men, Ladies, etc
+                            </p>
+                        </div>
+
+                        <div class="guide-card">
+                            <div class="guide-card-number">Step 2</div>
+                            <h3 class="guide-card-title">Browse Options</h3>
+                            <p class="guide-card-description">
+                                Browse the various Options for each Category: Corporate, Casual, Native, and others
+                            </p>
+                        </div>
+
+                        <div class="guide-card">
+                            <div class="guide-card-number">Step 3</div>
+                            <h3 class="guide-card-title">Find your Style</h3>
+                            <p class="guide-card-description">
+                                Immerse yourself in the design of each Option till you find which matches your style
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== Catalogue ====================-->
+            <section class="catalog section container" id="catalogue">
+                <h2 class="section-title-center">
+                    Lose yourself in Our<br> Catalogue
+                </h2>
+
+                <p class="catalog-description">
+                    Here are some selected outfits from our collection, all are of exceptional 
+                    quality and Superior Craftmanship. You deserve the best, so place an order now - thank Us Later ^_^
+                </p>
+
+                <div class="catalog-container" id="men">
+                    <h2 class="catalog-header">MEN</h2>
+                    <div class="catalog-content grid">
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/bridge1.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Classic Suit</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/bridge2.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Classic Suit</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/bridge3.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Classic Suit</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/bridge4.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Senator</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/bridge5.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Senator</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/bridge7.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Senator</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/casual1.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Casual</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/casual2.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Casual</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/casual3.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Casual</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <a href="/men.html" class="button button--flex">
+                            More <svg class="button-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg>
+                        </a>
+                      
+                    </div>
+                </div>
+                <div class="catalog-container" id="women">
+                    <h2 class="catalog-header">WOMEN</h2>
+                    <div class="catalog-content grid">
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/femsuit1.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Corporate</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/FEM2.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Corporate</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/femsuit2.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Corporate</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/dress3.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Dress</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/dress1.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Dress</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/dress2.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Dress</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/native1.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Native</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/native3.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Native</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/native2.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Native</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <a href="/women.html" class="button button--flex">
+                            More <svg class="button-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="catalog-container" id="students">
+                    <h2 class="catalog-header">STUDENTS</h2>
+                    <div class="catalog-content grid">
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school1.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Senior</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school2.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Senior</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school3.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Senior</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school4.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Junior</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school5.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Junior</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school6.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Junior</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school7.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Sportswear</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school8.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Sportswear</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="catalog-card">
+                            <div class="catalog-img">
+                                <img src="/assets/img/school9.png" alt="">
+                            </div>
+
+                            <h3 class="catalog-title">Sportswear</h3>
+                            <div class="catalog-overlay">
+                                <div class="overlay-content">
+                                    <svg class="catalog-svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+                                    <p class="catalog-price">3000</p>
+                                </div>
+                            </div>
+                        </article>
+                        <a href="/students.html" class="button button--flex">
+                            More <svg class="button-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+  
+        <!-- Typed.JS -->
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <script>
+            var typed = new Typed('.home-subtitle', {
+                strings: ["BRIDGEGAP CLOTHINGS", "<i>Find your style:</i>", "There's something for everyone", "Men", "Women", "<i>Even Students</i>", "COP YOUR <i>CLASSIC</i>", "<i>CORPORATE</i>", "CASUAL &amp <i>NATIVE ATTIRE!</i>", "ALL SEAMLESS", "& <i>POCKET FRIENDLY</i>"],
+                typeSpeed: 80,
+                backSpeed: 40,
+                loop: true
+            })
+        </script>
+       
+         <!--=============== SCROLL REVEAL ===============-->
+         <script src="assets/js/scrollreveal.min.js"></script>
+        
+         <!--=============== MAIN JS ===============-->
+         <script src="assets/js/main.js"></script>
+    </body>
+</html>
