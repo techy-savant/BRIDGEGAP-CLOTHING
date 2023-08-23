@@ -1,3 +1,5 @@
+
+
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
@@ -46,7 +48,7 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
-/*=============== QUESTIONS ACCORDION ===============*/
+/*=============== questions ACCORDION ===============*/
 const accordionItems = document.querySelectorAll('.questions-item')
 
 accordionItems.forEach((item) =>{
@@ -148,10 +150,4 @@ sr.reveal(`.home-img`, {delay: 500})
 sr.reveal(`.home-social`, {delay: 600})
 sr.reveal(`.about-img, .contact-box`,{origin: 'left'})
 sr.reveal(`.about-data, .contact-form`,{origin: 'right'})
-sr.reveal(`.guide-card, .catalog-card, .questions-group, .footer`,{interval: 100});
-
-
-
-
-
-
+sr.reveal(`.steps-card, .product-card, .questions-group, .footer`,{interval: 100})

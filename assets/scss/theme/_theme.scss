@@ -30,7 +30,9 @@ the website, in dark theme
     background-color: var(--first-color-dark);
 }
 
-.dark-theme .catalog-circle,
+.dark-theme .catalog-card{
+    background-color: var(--first-color-dark);
+}
 .dark-theme .footer-subscribe{
     background-color: var(--container-color);
 }

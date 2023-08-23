@@ -1,6 +1,6 @@
 /*! @license ScrollReveal v4.0.9
 
-	Copyright 2021 Fisssion LLC.
+	footer-copy 2021 Fisssion LLC.
 
 	Licensed under the GNU General Public License 3.0 for
 	compatible open source projects and non-commercial use.

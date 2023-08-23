@@ -1,0 +1,73 @@
+/*=============== questions ===============*/
+.questions{
+    background-color: var(--first-color-lighten);
+
+    &-container{
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+    &-title{
+       text-align: center;
+    }
+    &-group{
+        display: grid;
+        row-gap: 1.5rem;
+    }
+    &-item{
+        background-color: var(--container-color);
+        border-radius: 2rem;
+
+        &:hover{
+            box-shadow: 0 2px 8px hsla(var(--hue), 4%, 15%, .15);
+        }
+    }
+    &-item-title{
+        font-size: var(--small-font-size);
+        font-weight: var(--font-medium);
+    }
+    &-icon{
+        font-size: 1.25rem;
+        order: 2;
+        margin-left: auto;
+        color: var(--title-color);
+    }
+    &-description{
+        font-size: var(--smaller-font-size);
+        padding: 0 1.25rem 1.25rem 2rem;
+    }
+    &-header{
+        display: flex;
+        align-items: center;
+        column-gap: .5rem;
+        padding: .75rem .5rem;
+        cursor: pointer;
+    }
+    &-content{
+        overflow: hidden;
+        height: 0;
+    }
+    &-item,
+    &-header,
+    &-item-title,
+    &-icon,
+    &-description,
+    &-content{
+        transition: .3s;
+    }
+}
+
+/*Rotate icon and add font weight to titles*/
+.accordion-open{
+    & .questions-header,
+    & .questions-content{
+        background-color: var(--first-color);
+    }
+    & .questions-item-title,
+    & .questions-description,
+    & .questions-icon{
+        color: #FFF;
+    }
+    & .questions-icon{
+        transform: rotate(45deg);
+    }
+}

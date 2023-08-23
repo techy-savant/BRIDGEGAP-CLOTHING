@@ -135,9 +135,6 @@
         }
     }
 
-    .questions-container{
-        align-items: flex-start;
-    }
 
     .footer{
         &-container{
@@ -176,9 +173,6 @@
         }
     }
 
-    // .about-img{
-    //     width: 100%;
-    // }
 
     .guide{
         &-container{
@@ -207,9 +201,6 @@
         &-container{
             padding: 1rem 0 4rem;
         }
-        &-title{
-            text-align: initial;
-        }
         &-group{
             row-gap: 2rem;
         }
@@ -217,7 +208,7 @@
             padding: 1rem;
         }
         &-description{
-            padding: 0 3.5rem 2.25rem 2.75rem;
+            padding: 0 3.5rem 2.25rem 2.5rem;
         }
     }
 
@@ -226,7 +217,7 @@
             font-size: var(--h3-font-size);
         }
         &-container{
-            grid-template-columns: 1fr .5fr .5fr .5fr;
+            grid-template-columns: 1fr .5fr .5fr;
         }
         &-copy{
             margin: 7rem 0 2rem;

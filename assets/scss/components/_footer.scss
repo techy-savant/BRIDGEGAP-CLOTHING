@@ -1,0 +1,122 @@
+/*=============== FOOTER ===============*/
+.footer{
+    &-container{
+        row-gap: 3rem;
+    }
+    &-logo{
+        display: inline-flex;
+        align-items: center;
+        column-gap: .5rem;
+        color: var(--title-color);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: -1px;
+        margin-bottom: var(--mb-2-5);
+        transition: .3s;
+
+        &:hover{
+            color: var(--first-color);
+        }
+
+        &-icon{
+            font-size: 1.15rem;
+            width: 1.15rem;
+            height: 1.15rem;
+            color: var(--first-color);
+            fill: var(--first-color);
+        }
+    }
+    &-title{
+        font-size: var(--h3-font-size);
+        margin-bottom: var(--mb-1-5);
+    }
+    &-subscribe{
+        background-color: var(--first-color-lighten);
+        padding: .75rem;
+        display: flex;
+        justify-content: space-between;
+        border-radius: .5rem;
+    }
+    &-input{
+        width: 70%;
+        padding: 0 .5rem;
+        background: none;
+        color: var(--text-color);
+        border: none;
+        outline: none;
+    }
+    &-button{
+        padding: 1rem;
+    }
+    &-data{
+        display: grid;
+        row-gap: .75rem;
+    }
+    &-information{
+        font-size: var(--small-font-size);
+    }
+    &-social{
+        display: inline-flex;
+        column-gap: .75rem;
+
+        &-link{
+            font-size: 1rem;
+            color: var(--text-color);
+            transition: .3s;
+
+            &:hover {
+                transform: translateY(-.25rem);
+            }
+        }
+    }
+    &-cards{
+        display: inline-flex;
+        align-items: center;
+        column-gap: .5rem;
+    }
+    &-card{
+        width: 35px;
+    }
+    &-copy{
+        display: grid;
+        place-items: center;
+        row-gap: 3px;
+        font-size: var(--small-font-size);
+        color: var(--text-color-light);
+        margin: 5rem 0 1rem;
+
+        .copy-content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .70rem;
+            column-gap: 5px;
+        }
+        .copy-logo{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            column-gap: 3px;
+            svg{
+                width: 1rem;
+                height: 1rem;
+                fill: var(--first-color);
+                transition: .3s all ease-in;
+
+            }
+            p{
+                color: var(--text-color-light);
+                font-weight: var(--font-medium);
+                transition: .3s all ease-in;
+
+            }
+
+            &:hover svg{
+                fill: var(--first-color-light);
+            }
+            &:hover p{
+                color: var(--text-color);
+            }
+        }
+    }
+}
