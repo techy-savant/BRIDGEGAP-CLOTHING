@@ -1,0 +1,106 @@
+.catl{
+   
+    &-body{
+        margin: 3rem auto;
+        position: relative;
+        padding-bottom: 50px;
+  
+        
+        .catl-con{
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+            .catl-card{
+                width: 100%;
+                padding: 0.5rem;
+                margin-top: 35PX;
+                
+                
+
+                .top-card-content{
+                    background-color: #ebecee;
+                    display: flex;
+                    position: relative;
+                    height: 430px;
+                   
+
+                    .price-con{
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        background-color: white;
+                        margin: 0.5rem;
+                        padding: 0.2rem;
+                        p{
+                            font-size: 0.8rem;
+                            color: black;
+                        }
+
+                    }
+
+                    img{
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                .bottom-card-content{
+                    padding-top: 0.9rem;
+                    text-align: start;
+
+                    .card-description{
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+
+            .catl-card:hover{
+                border: 0.5px solid #8f8f8f;
+            }
+        }
+
+        .button{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 1rem 1.2rem;
+            margin-right: 2rem;
+            
+
+        }
+    }
+
+    &-title{
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .catl{
+        &-body{
+              
+        .catl-con{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            
+         }
+ 
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .catl{
+        &-body{
+              
+        .catl-con{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            
+         }
+ 
+        }
+    }
+}
