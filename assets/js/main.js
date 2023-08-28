@@ -22,7 +22,7 @@ if(navClose){
 }
 
 /*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav-link');
+const navLink = document.querySelectorAll('.nav-item');
 const dropbarItem = document.querySelectorAll('.dropdown-content a');
 
 function linkAction(){
