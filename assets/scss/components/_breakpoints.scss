@@ -27,29 +27,12 @@
         }
     }
 
-    .catalog{
-        &-content{
-            grid-template-columns: repeat(1, minmax(130px, 1fr));
-        }
-        &-img{
-            min-height: 110px;
-            width: 130px;
-        }
-    }
+    
 
 
 }
-@media screen and (max-width: 400px){
-    .catalog {
-        &-svg{
-            width: .6rem;
-            height: .6rem;
-        }
-        &-price{
-            font-size: .6rem;
-        }
-    }
-}
+
+
 @media screen and (max-width: 760px){
     .home{
         &-img{
@@ -72,17 +55,23 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+
     .catalog{
-        &-description{
-            padding: 0 4rem;
+
+        .catalog-content{
+            grid-template-columns: repeat(2, 1fr);
+
+    
+            .top-card-content{
+                height: 430px;
+
+                img{
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
         }
-        &-content{
-            grid-template-columns: repeat(3, minmax(160px, 1fr));
-        }
-        &-img{
-            min-height: 130px;
-            width: 160px;
-        }
+        
     }
 
     .footer-subscribe{
@@ -135,6 +124,20 @@
         }
     }
 
+    .catalog{
+        &-description{
+            padding: 0 4rem;
+        }
+
+        .catalog-content{
+            grid-template-columns: repeat(3, 1fr);
+    
+            .top-card-content{
+                height: 400px;
+            }
+        }
+        
+    }
 
     .footer{
         &-container{
@@ -186,17 +189,6 @@
         }
     }
 
-    .catalog{
-        &-description{
-            padding: 0 16rem;
-        }
-        
-        &-title,
-        &-price{
-            font-size: var(--smaller-font-size);
-        }
-    }
-
     .questions{
         &-container{
             padding: 1rem 0 4rem;
@@ -242,15 +234,6 @@
             &-link{
                 font-size: 1.15rem;
             }
-        }
-    }
-    .catalog{
-        &-content{
-            grid-template-columns: repeat(3, minmax(210px, 1fr));
-        }
-        &-img{
-            min-height: 180px;
-            width: 210px;
         }
     }
 
