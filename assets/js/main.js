@@ -22,7 +22,7 @@ if(navClose){
 }
 
 /*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav-item');
+const navItem = document.querySelectorAll('.nav-item');
 const dropbarItem = document.querySelectorAll('.dropdown-content a');
 
 function linkAction(){
@@ -35,7 +35,7 @@ function dropcontentAction(){
     // When we click on each nav-link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+navItem.forEach(n => n.addEventListener('click', linkAction))
 dropbarItem.forEach((item) =>{
     item.addEventListener('click', dropcontentAction)
 })
