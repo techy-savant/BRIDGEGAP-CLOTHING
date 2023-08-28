@@ -84,7 +84,7 @@
             outline: none;
             transition: color .4s ease;
         }
-        .dropdown .nav-item:hover{
+        .dropdown .nav-item:hover, .dropdown .nav-item:focus{
             color: var(--text-color);
         }
         .dropdown-content {
