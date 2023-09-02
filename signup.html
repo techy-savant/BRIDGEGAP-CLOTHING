@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    
+    <section class="signup-container">
+
+        <div class="content">
+            <h1>Sign up</h1>
+
+            <form action="" method="POST" id="signup-form">
+                <div class="contact-inputs">
+                    <div class="contact-content">
+                        <input type="text" placeholder=" " class="contact-input" name="username" required>
+                        <label for="" class="contact-label">Username</label>
+                    </div>
+                    <div class="contact-content">
+                        <input type="email" placeholder=" " class="contact-input" name="email" required>
+                        <label for="" class="contact-label">Email</label>
+                    </div>
+    
+                    <div class="contact-content">
+                        <input type="password" placeholder=" " class="contact-input" name="password" required>
+                        <label for="" class="contact-label">Password</label>
+                    </div>
+    
+                    <div class="contact-content">
+                        <input type="password" placeholder=" " class="contact-input" name="confirm_password" required>
+                        <label for="" class="contact-label">Password [again]</label>
+                    </div>
+                </div>
+
+                <input type="submit" class="submit-btn">
+            </form>
+          
+            <p class="txt-question">Already have an account? <a href="/login.html"> Login</a></p>
+        </div>
+    </div>
+
+
+    <div class="modal-container">
+           
+        <div class="modal-box loading-modal">
+            <div class="loading-container">
+                <img src="assets/img/loading.gif" alt="loading">
+                <p class="loading-message">Loading...</p>
+            </div>
+        </div>
+
+        <div class="modal-box action-msg-alert-modal">
+            <div class="action-container">
+                <p class="action-message">blank</p>
+                <button class="action-btn" onclick="transitionModal('none'); goToLogin()">Ok</button>
+            </div>
+        </div>
+   </div>
+    <script src="/assets//js/authforms.js"></script>
+</body>
+</html>

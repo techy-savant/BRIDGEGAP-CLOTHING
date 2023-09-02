@@ -245,3 +245,35 @@
         right: 3rem;
     }
 }
+
+// breakpoints for profile.html
+
+@media screen and (max-width: 525px){
+    .profile-panel-section{
+        .cat-sub{     
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+}
+
+@media screen and (max-width: 764px){
+    .profile-panel-section{
+        .product-panel{
+            .product-container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    .profile-panel-section{
+        .product-panel{
+            .product-container{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}

@@ -1067,6 +1067,341 @@ the website, in dark theme
   border-radius: 0.5rem;
 }
 
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  background-color: var(--first-color);
+  border-radius: 30px;
+  max-width: 110px;
+}
+.user i {
+  color: white;
+  font-size: 0.9rem;
+}
+.user p {
+  color: white;
+  font-size: 0.9rem;
+  margin-left: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-lines: 1;
+}
+
+.card {
+  width: 90%;
+  min-width: 100%;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+  padding: 1.2rem;
+}
+.card p {
+  color: black;
+  font-size: 0.9rem;
+}
+.card .card-content {
+  padding-top: 0.9rem;
+}
+
+.profile-panel-section .cat-sub {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.profile-panel-section .cat-sub .create-cat {
+  display: flex;
+  flex-direction: column;
+}
+.profile-panel-section .cat-sub .create-cat .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.profile-panel-section .cat-sub .create-cat .card-content input[type=text] {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  max-width: 250px;
+}
+.profile-panel-section .cat-sub .create-cat .card-content button {
+  margin-top: 0.9rem;
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.6rem 0.9rem;
+}
+.profile-panel-section .cat-sub .create-sub .card-content .hint-text {
+  font-size: 0.8rem;
+  color: rgb(159, 159, 159);
+}
+.profile-panel-section .cat-sub .create-sub .card-content select {
+  width: 60%;
+  height: 30px;
+  border: 0.5px solid rgb(133, 133, 133);
+  outline: none;
+}
+.profile-panel-section .cat-sub .create-sub .card-content input[type=text] {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  margin-top: 0.9rem;
+  max-width: 250px;
+}
+.profile-panel-section .cat-sub .create-sub .card-content button {
+  margin-top: 0.9rem;
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.6rem 0.9rem;
+}
+.profile-panel-section .product-panel {
+  margin-top: 50px;
+}
+.profile-panel-section .product-panel .p-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-panel-section .product-panel .p-header .right-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.profile-panel-section .product-panel .p-header .right-container .search-input-container {
+  display: flex;
+  flex-direction: row;
+  border: 0.5px solid var(--text-color);
+  border-radius: 20px;
+  position: relative;
+  padding: 0.5rem;
+}
+.profile-panel-section .product-panel .p-header .right-container .search-input-container input[type=text] {
+  outline: none;
+  border: none;
+}
+.profile-panel-section .product-panel .p-header .right-container .search-input-container .search-options {
+  border: none;
+  outline: none;
+}
+.profile-panel-section .product-panel .p-header .right-container button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: var(--first-color);
+  margin-left: 0.2rem;
+  border-radius: 20px;
+}
+.profile-panel-section .product-panel .p-header .right-container button i {
+  color: white;
+}
+.profile-panel-section .product-panel .p-header .right-container button p {
+  color: white;
+}
+.profile-panel-section .product-panel .product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
+}
+.profile-panel-section .product-panel .product-container .catl-card {
+  width: 100%;
+  padding: 0.5rem;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content {
+  padding-top: 0.9rem;
+  text-align: start;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content p {
+  margin-top: 0.5rem;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .product-description {
+  max-width: 90%;
+  font-size: 0.75rem;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.9rem;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns button {
+  margin: 0.45rem;
+  padding: 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns .delete-btn {
+  background-color: red;
+  color: white;
+}
+
+.create-product-modal {
+  position: relative;
+}
+.create-product-modal .create-product-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+.create-product-modal .create-product-container .create-inputs {
+  padding: 0.9rem;
+}
+.create-product-modal .create-product-container .create-inputs form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.9rem;
+}
+.create-product-modal .create-product-container .create-inputs form .form-input {
+  padding: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  outline: none;
+}
+.create-product-modal .create-product-container .create-inputs form .custom-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.7rem;
+  text-align: start;
+}
+.create-product-modal .create-product-container .create-inputs form .custom-input .cus-input-label {
+  font-size: 0.9rem;
+}
+.create-product-modal .create-product-container .create-inputs form .custom-input .select-input {
+  padding: 0.4rem;
+  font-size: 0.9rem;
+  outline: none;
+}
+.create-product-modal .create-product-container .create-inputs form input[type=text] {
+  outline: none;
+}
+.create-product-modal .create-product-container .create-inputs form input[type=submit] {
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.3rem;
+  outline: none;
+  margin-top: 0.9rem;
+  cursor: pointer;
+  border: none;
+}
+.create-product-modal .create-product-container .bottom-content {
+  padding: 0.5rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+}
+.create-product-modal .create-product-container .bottom-content button {
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.create-product-modal #close-product-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.9rem;
+  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.create-product-modal #back-to-product {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.9rem;
+  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.loading-modal .loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem;
+}
+.loading-modal .loading-container img {
+  width: 30px;
+  height: 30px;
+}
+.loading-modal .loading-container p {
+  margin-top: 0.9rem;
+}
+
+.action-msg-alert-modal .action-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem;
+  text-align: center;
+}
+.action-msg-alert-modal .action-container p {
+  color: black;
+}
+.action-msg-alert-modal .action-container button {
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  margin-top: 0.9rem;
+  cursor: pointer;
+}
+
+.signup-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup-container .content {
+  width: 90%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.signup-container .content .contact-inputs {
+  margin-top: 40px;
+}
+.signup-container .content .submit-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--first-color);
+  color: white;
+  border: none;
+}
+.signup-container .content .txt-question {
+  margin-top: 0.9rem;
+}
+
+.denied-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.denied-container .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.denied-container .right h1 {
+  font-size: 2.5rem;
+}
+.denied-container .right a {
+  margin-top: 0.9rem;
+}
+
+@media screen and (max-width: 500px) {
+  .denied-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .denied-container .right {
+    margin-top: 1rem;
+  }
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
@@ -1251,281 +1586,19 @@ the website, in dark theme
     right: 3rem;
   }
 }
-.user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem;
-  background-color: var(--first-color);
-  border-radius: 30px;
-  max-width: 110px;
+@media screen and (max-width: 525px) {
+  .profile-panel-section .cat-sub {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
-.user i {
-  color: white;
-  font-size: 0.9rem;
+@media screen and (max-width: 764px) {
+  .profile-panel-section .product-panel .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.user p {
-  color: white;
-  font-size: 0.9rem;
-  margin-left: 0.3rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-lines: 1;
-}
-
-.card {
-  width: 90%;
-  min-width: 100%;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
-  padding: 1.2rem;
-}
-.card p {
-  color: black;
-  font-size: 0.9rem;
-}
-.card .card-content {
-  padding-top: 0.9rem;
-}
-
-.profile-panel-section .cat-sub {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-.profile-panel-section .cat-sub .create-cat {
-  display: flex;
-  flex-direction: column;
-}
-.profile-panel-section .cat-sub .create-cat .card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.profile-panel-section .cat-sub .create-cat .card-content input[type=text] {
-  font-size: 0.9rem;
-  padding: 0.6rem 0.9rem;
-}
-.profile-panel-section .cat-sub .create-cat .card-content button {
-  margin-top: 0.9rem;
-  background-color: var(--first-color);
-  color: white;
-  padding: 0.6rem 0.9rem;
-}
-.profile-panel-section .cat-sub .create-sub .card-content .hint-text {
-  font-size: 0.8rem;
-  color: rgb(159, 159, 159);
-}
-.profile-panel-section .cat-sub .create-sub .card-content select {
-  width: 60%;
-  height: 30px;
-  border: 0.5px solid rgb(133, 133, 133);
-  outline: none;
-}
-.profile-panel-section .cat-sub .create-sub .card-content input[type=text] {
-  font-size: 0.9rem;
-  padding: 0.6rem 0.9rem;
-  margin-top: 0.9rem;
-}
-.profile-panel-section .cat-sub .create-sub .card-content button {
-  margin-top: 0.9rem;
-  background-color: var(--first-color);
-  color: white;
-  padding: 0.6rem 0.9rem;
-}
-.profile-panel-section .product-panel {
-  margin-top: 50px;
-}
-.profile-panel-section .product-panel .p-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.profile-panel-section .product-panel .p-header .right-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.profile-panel-section .product-panel .p-header .right-container .search-input-container {
-  display: flex;
-  flex-direction: row;
-  border: 0.5px solid var(--text-color);
-  border-radius: 20px;
-  position: relative;
-  padding: 0.5rem;
-}
-.profile-panel-section .product-panel .p-header .right-container .search-input-container input[type=text] {
-  outline: none;
-  border: none;
-}
-.profile-panel-section .product-panel .p-header .right-container .search-input-container .search-options {
-  border: none;
-  outline: none;
-}
-.profile-panel-section .product-panel .p-header .right-container button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0.5rem;
-  background-color: var(--first-color);
-  margin-left: 0.2rem;
-  border-radius: 20px;
-}
-.profile-panel-section .product-panel .p-header .right-container button i {
-  color: white;
-}
-.profile-panel-section .product-panel .p-header .right-container button p {
-  color: white;
-}
-.profile-panel-section .product-panel .product-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.profile-panel-section .product-panel .product-container .catl-card {
-  width: 100%;
-  padding: 0.5rem;
-}
-.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content {
-  padding-top: 0.9rem;
-  text-align: start;
-}
-.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content p {
-  margin-top: 0.5rem;
-}
-.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .product-description {
-  max-width: 90%;
-  font-size: 0.75rem;
-}
-.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.9rem;
-}
-.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns button {
-  margin: 0.45rem;
-  padding: 0.7rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns .delete-btn {
-  background-color: red;
-  color: white;
-}
-
-.create-product-modal {
-  position: relative;
-}
-.create-product-modal .create-product-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-top: 20px;
-}
-.create-product-modal .create-product-container .create-inputs {
-  padding: 0.9rem;
-}
-.create-product-modal .create-product-container .create-inputs form {
-  display: flex;
-  flex-direction: column;
-  padding: 0.9rem;
-}
-.create-product-modal .create-product-container .create-inputs form .form-input {
-  padding: 0.4rem;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  outline: none;
-}
-.create-product-modal .create-product-container .create-inputs form .custom-input {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.7rem;
-  text-align: start;
-}
-.create-product-modal .create-product-container .create-inputs form .custom-input .cus-input-label {
-  font-size: 0.9rem;
-}
-.create-product-modal .create-product-container .create-inputs form .custom-input .select-input {
-  padding: 0.4rem;
-  font-size: 0.9rem;
-  outline: none;
-}
-.create-product-modal .create-product-container .create-inputs form input[type=text] {
-  outline: none;
-}
-.create-product-modal .create-product-container .create-inputs form input[type=submit] {
-  background-color: var(--first-color);
-  color: white;
-  padding: 0.3rem;
-  outline: none;
-  margin-top: 0.9rem;
-  cursor: pointer;
-  border: none;
-}
-.create-product-modal .create-product-container .bottom-content {
-  padding: 0.5rem 0.9rem;
-  display: flex;
-  flex-direction: column;
-}
-.create-product-modal .create-product-container .bottom-content button {
-  background-color: var(--first-color);
-  color: white;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-.create-product-modal #close-product-modal {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0.9rem;
-  font-size: 1.2rem;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-.create-product-modal #back-to-product {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0.9rem;
-  font-size: 1.2rem;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.loading-modal .loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem;
-}
-.loading-modal .loading-container img {
-  width: 30px;
-  height: 30px;
-}
-.loading-modal .loading-container p {
-  margin-top: 0.9rem;
-}
-
-.action-msg-alert-modal .action-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem;
-  text-align: center;
-}
-.action-msg-alert-modal .action-container p {
-  color: black;
-}
-.action-msg-alert-modal .action-container button {
-  background-color: var(--first-color);
-  color: white;
-  padding: 0.5rem 1.2rem;
-  margin-top: 0.9rem;
-  cursor: pointer;
+@media screen and (max-width: 500px) {
+  .profile-panel-section .product-panel .product-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=style.css.map */

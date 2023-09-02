@@ -42,6 +42,7 @@
 }
 
 .profile-panel-section{
+
     .cat-sub{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -59,6 +60,7 @@
                 input[type=text]{
                     font-size: 0.9rem;
                     padding: 0.6rem 0.9rem;
+                    max-width: 250px;
                     
                 }
 
@@ -89,6 +91,7 @@
                     font-size: 0.9rem;
                     padding: 0.6rem 0.9rem;
                     margin-top: 0.9rem;
+                    max-width: 250px;
                     
                 }
 
@@ -105,8 +108,9 @@
     }
 
     .product-panel{
+        
         margin-top: 50px;
-    
+        
       
         .p-header{
             display: flex;
@@ -164,6 +168,7 @@
         .product-container{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            margin-top: 20px;
              .catl-card{
                  width: 100%;
                  padding: 0.5rem;

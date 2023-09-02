@@ -26,11 +26,15 @@ const prodSubCategorySelect=  document.getElementById('prod-sub-category-select'
 const uploadProductBtn = document.getElementById('upload-product-btn')
 
 const productContainer = document.getElementById('product-container')
+
+txtUsername = document.getElementById('txt-username')
 let formData;
 
 const domain = 'http://localhost:8000/'
 
 let categoryList = []
+
+const authToken = localStorage.getItem('auth-token')
 
 class SubCategoryClass{
     constructor(category, sub_category_title){
@@ -66,6 +70,29 @@ backToProduct.addEventListener('click', function(){
 
 document.addEventListener('DOMContentLoaded', function(){
     console.log('content loaded')
+    
+    //===FETCH THE CURRENT USER
+    const getuserendpoint = domain + 'api/getcurrentuser/'
+    let user;
+    let myToken = localStorage.getItem('auth-token')
+    fetch(getuserendpoint, {
+        method: 'POST',
+        headers: {
+            Authorization: `Token ${myToken}`
+        }
+    })
+    .then(response =>{
+        if(!response.ok){
+            console.log('error getting current user')
+        }
+        return response.json()
+    })
+    .then(data =>{
+       txtUsername.textContent = data.user.username
+    })
+    //== END FETCH THE CURRENT USER
+
+
     //==== populating the category list
     let endpoint = domain + '/api/list-categories/'
     fetch(endpoint, {
@@ -250,7 +277,10 @@ function uploadProduct(formData){
 
         fetch(productEndPoint, {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+                Authorization: `Token ${authToken}`
+            }
         })
         .then(response =>{
             if(!response.ok){
@@ -275,10 +305,13 @@ createCategoryForm.addEventListener('submit', function(e){
     transitionModal('loading-modal')
     let formData = new FormData(this)
     let endpoint = domain + 'api/create-category/'
-    console.log(endpoint)
+    console.log(authToken)
     fetch(endpoint, {
         method : 'POST',
-        body: formData
+        body: formData,
+        headers: {
+            Authorization: `Token ${authToken}`
+        }
     })
     .then(response =>{
         if(!response.ok){
@@ -316,7 +349,10 @@ createSubCatForm.addEventListener('submit', function(e){
     let endpoint = domain + '/api/create-sub-category/'
     fetch(endpoint, {
        method: 'POST',
-       body: formData 
+       body: formData ,
+       headers: {
+        Authorization: `Token ${authToken}`
+       }
     })
     .then(response =>{
         if(!response.ok){
