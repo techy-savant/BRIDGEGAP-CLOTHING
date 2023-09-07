@@ -6,7 +6,7 @@
  * 
  */
 
-const mDomain = 'http://localhost:8000/'
+const mDomain = localStorage.getItem('domain')
 
 let token = localStorage.getItem('auth-token')
 if(token){

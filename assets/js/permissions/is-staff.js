@@ -1,6 +1,6 @@
 
-const webDomain = 'http://localhost:8000/'
-const getUserEndpoint = webDomain + 'api/getcurrentuser/'
+const webDomain = localStorage.getItem('domain')
+const getUserEndpoint = webDomain + '/api/getcurrentuser/'
 let user;
 let myToken = localStorage.getItem('auth-token')
 fetch(getUserEndpoint, {

@@ -2,7 +2,7 @@ const signupForm = document.getElementById('signup-form')
 const loginform = document.getElementById('login-form')
 const alertActionMessage = document.querySelector('.action-message')
 
-const domain = 'http://localhost:8000/'
+const domain = localStorage.getItem('domain')
 let readyToLogin = false
 let returnData
 

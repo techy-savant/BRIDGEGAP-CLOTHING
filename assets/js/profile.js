@@ -30,7 +30,7 @@ const productContainer = document.getElementById('product-container')
 txtUsername = document.getElementById('txt-username')
 let formData;
 
-const domain = 'http://localhost:8000/'
+const domain = localStorage.getItem('domain')
 
 let categoryList = []
 
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function(){
     console.log('content loaded')
     
     //===FETCH THE CURRENT USER
-    const getuserendpoint = domain + 'api/getcurrentuser/'
+    const getuserendpoint = domain + '/api/getcurrentuser/'
     let user;
     let myToken = localStorage.getItem('auth-token')
     fetch(getuserendpoint, {

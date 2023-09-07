@@ -27,7 +27,8 @@ const dropbarItem = document.querySelectorAll('.dropdown-content a');
 
 const productSectionContainer = document.querySelector('.catalog-section-container')
 
-const domain = 'http://localhost:8000/'
+const domain = localStorage.getItem('domain')
+
 class Product{
     constructor(category, price, product_description, product_image, product_title, product_url, sub_category, category_title, sub_category_title){
         this.category = category
