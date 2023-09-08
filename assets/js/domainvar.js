@@ -6,4 +6,4 @@
 const localDomain = 'http://localhost:3000'
 const productionDomain = 'https://bridgegapclothing.com/backend'
 
-localStorage.setItem('domain', localDomain)
+localStorage.setItem('domain', productionDomain)
