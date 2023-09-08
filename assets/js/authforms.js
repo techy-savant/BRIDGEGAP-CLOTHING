@@ -9,19 +9,20 @@ let returnData
 if(signupForm !== null){
     signupForm.addEventListener('submit', function(e){
         e.preventDefault()
-    
-        
+     
+       
         transitionModal('loading-modal')
         const endpoint = domain +'/api/signup/'
     
         let formData = new FormData(this)
         fetch(endpoint, {
-            method: 'POST',
-            body: formData
+            method: 'GET',
+            body: formData,
+          
         })
         .then(response =>{
             if(!response.ok){
-                console.log('error signing up user')
+                console.log('signup error')
                 alertActionMessage.textContent = 'error' + response.status
                 transitionModal('action-msg-alert-modal')
                 
@@ -32,7 +33,7 @@ if(signupForm !== null){
             return response.json()
         })
         .then(data =>{
-            alertActionMessage.textContent = data.message
+            data.message == undefined? alertActionMessage.textContent = 'Fatal: an error occured': alertActionMessage.textContent = data.message
             transitionModal('action-msg-alert-modal')
             console.log(data.message)
         })
@@ -48,6 +49,11 @@ if(signupForm !== null){
     
 }
 
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
 
 if(loginform !== null){
     loginform.addEventListener('submit', function(e){

@@ -304,7 +304,7 @@ createCategoryForm.addEventListener('submit', function(e){
     e.preventDefault()
     transitionModal('loading-modal')
     let formData = new FormData(this)
-    let endpoint = domain + 'api/create-category/'
+    let endpoint = domain + '/api/create-category/'
     console.log(authToken)
     fetch(endpoint, {
         method : 'POST',
@@ -315,7 +315,7 @@ createCategoryForm.addEventListener('submit', function(e){
     })
     .then(response =>{
         if(!response.ok){
-            console.log('there was an issue with the response')
+            console.log('something went wrong with the request')
         }
         return response.json()
     })
