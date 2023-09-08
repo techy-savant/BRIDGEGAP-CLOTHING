@@ -16,7 +16,7 @@ if(signupForm !== null){
     
         let formData = new FormData(this)
         fetch(endpoint, {
-            method: 'GET',
+            method: 'POST',
             body: formData,
           
         })
