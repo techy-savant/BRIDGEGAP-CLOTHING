@@ -70,7 +70,7 @@ if(loginform !== null){
         })
         .then(response =>{
             if(!response.ok){
-                console.log('error signing up user')
+                console.log('error loggin in  user')
             }
             return response.json()
         })

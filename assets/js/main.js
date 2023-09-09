@@ -216,6 +216,9 @@ window.addEventListener('scroll', scrollUp)
 
 /*=============== DARK LIGHT THEME ===============*/ 
 const themeButton = document.getElementById('theme-button')
+const userIcon = document.getElementById('user-icon')
+const userLink = document.getElementById('user-link')
+
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'
 
@@ -242,6 +245,11 @@ themeButton.addEventListener('click', () => {
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
+})
+
+
+userIcon.addEventListener('click', ()=>{
+    userLink.click()
 })
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
