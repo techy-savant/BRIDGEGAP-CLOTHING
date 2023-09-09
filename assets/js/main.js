@@ -216,8 +216,7 @@ window.addEventListener('scroll', scrollUp)
 
 /*=============== DARK LIGHT THEME ===============*/ 
 const themeButton = document.getElementById('theme-button')
-const userIcon = document.getElementById('user-icon')
-const userLink = document.getElementById('user-link')
+// const userIcon = document.getElementById('user-icon')
 
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'
@@ -248,9 +247,15 @@ themeButton.addEventListener('click', () => {
 })
 
 
-userIcon.addEventListener('click', ()=>{
-    userLink.click()
-})
+// userIcon.addEventListener('click', ()=>{
+//     loggedIn = localStorage.getItem('loggedIn')
+//     if(loggedIn){
+
+//     }
+//     else{
+//         window.location.href = '/login.html'
+//     }
+// })
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({

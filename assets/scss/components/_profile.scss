@@ -1,333 +1,111 @@
-.user{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0.6rem;
-    background-color: var(--first-color);
-    border-radius: 30px;
-    max-width: 110px;
-   
+.user-profile-section{
+    .welcome-div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
 
-    i{
-        color: white;
-        font-size: 0.9rem;
-    }
-
-    p{
-        color: white;
-        font-size: 0.9rem;
-        margin-left: 0.3rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        max-lines: 1;
-
-    }
-}
-
-.card{
-    width: 90%;
-    min-width: 100%;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
-    padding: 1.2rem;
-    p{
-        color: black;
-        font-size: 0.9rem;
-    }
-
-    .card-content{
-        padding-top: 0.9rem;
-    }
-}
-
-.profile-panel-section{
-
-    .cat-sub{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-       
-        .create-cat{
-            display: flex;
-            flex-direction: column;
-
-            .card-content{
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-               
-
-                input[type=text]{
-                    font-size: 0.9rem;
-                    padding: 0.6rem 0.9rem;
-                    max-width: 250px;
-                    
-                }
-
-                button{
-                    margin-top: 0.9rem;
-                    background-color: var(--first-color);
-                    color: white;
-                    padding: 0.6rem 0.9rem;
-                }
-            }
-        }
-
-        .create-sub{
-            .card-content{
-              
-                .hint-text{
-                    font-size: 0.8rem;
-                    color: rgb(159, 159, 159);
-                }
-                select{
-                    width: 60%;
-                    height: 30px;
-                    border: 0.5px solid rgb(133, 133, 133);
-                    outline: none;
-                }
-
-                input[type=text]{
-                    font-size: 0.9rem;
-                    padding: 0.6rem 0.9rem;
-                    margin-top: 0.9rem;
-                    max-width: 250px;
-                    
-                }
-
-                button{
-                    margin-top: 0.9rem;
-                    background-color: var(--first-color);
-                    color: white;
-                    padding: 0.6rem 0.9rem;
-                }
-            }
-          
-        }
-    
-    }
-
-    .product-panel{
-        
-        margin-top: 50px;
-        
-      
-        .p-header{
+        .con{
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-between;
+            gap: 0.9rem;
 
-            .right-container{
+            .left{
+                i{
+                    font-size: 1.5rem;
+                }
+            }
+
+            .right{
                 display: flex;
-                flex-direction: row;
-                align-items: center;
-                .search-input-container{
-                    display: flex;
-                    flex-direction: row;
-                    border: 0.5px solid var(--text-color);
-                    border-radius: 20px;
-                    position: relative;
-                    padding: 0.5rem;
-                    input[type=text]{
-                    
-                      outline: none;
-                      border: none;
-                     
-                    }
-
-                    .search-options{
-                        border: none;
-                        outline: none;
-                    }
-
+                flex-direction: column;
+                h1{
+                    font-size: 1.8rem;
                 }
 
-                button{
+                p{
+                    font-size: 0.9rem;
+                }
+
+                .admin-conf{
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    padding: 0.5rem;
-                    background-color: var(--first-color);
-                    margin-left: 0.2rem;
-                    border-radius: 20px;
-
+                    gap: 0.2rem;
+                    margin-top: 0.4rem;
+                    
                     i{
-                        color: white;
+                        color: green;
+                        font-size: 0.8rem;
                     }
 
                     p{
-                        color: white;
+                        font-size: 0.8rem;
                     }
                 }
             }
         }
-
-       
-
-        .product-container{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            margin-top: 20px;
-             .catl-card{
-                 width: 100%;
-                 padding: 0.5rem;
-       
-                 .bottom-card-content{
-                     padding-top: 0.9rem;
-                     text-align: start;
-
-                     p{
-                        margin-top: 0.5rem;
-                     }
- 
-                     .product-description{
-                        max-width: 90%;
-                        font-size: 0.75rem;
-                     }
-
-                     .action-btns{
-                        display: flex;
-                        flex-direction: column;
-                        margin-top: 0.9rem;
-                        button{
-                            margin: 0.45rem;
-                            padding: 0.7rem;
-                            font-size: 0.8rem;
-                            cursor: pointer;
-                        }
-
-                        .delete-btn{
-                            background-color: red;
-                            color: white;
-                        }
-                     }
-                 }
-             }
- 
-        }
     }
-}
 
+    .edit-profile-container{
+        padding: 1rem;
+        margin-top: 30px;
+        // background-color: rgb(246, 246, 246);
 
-.create-product-modal{
-    position: relative;
-    .create-product-container{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin-top: 20px;
-      
-        .create-inputs{
-            padding: 0.9rem;
-           form{
+        #edit-profile-form{
+            margin-top: 20px;
             display: flex;
             flex-direction: column;
-            padding: 0.9rem;
+            align-items: flex-start;
 
-            .form-input{
-                padding: 0.4rem;
-                margin-top: 0.5rem;
-                font-size: 0.9rem;
-                outline: none;
-            }
-
-            .custom-input{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                margin-top: 0.7rem;
-                
-                text-align: start;
-
-                .cus-input-label{
-                    font-size: 0.9rem;
-                }
-
-                .select-input{
-                    padding: 0.4rem;
-                    font-size: 0.9rem;
-                    outline: none;
-                }
-            }
 
             input[type=text]{
+                padding: 0.5rem;
                 outline: none;
+                width: 90%;
+                max-width: 300px;
+
+                
             }
 
             input[type=submit]{
                 background-color: var(--first-color);
-                color: white;
-
-                padding: 0.3rem;
-                outline: none;
-                margin-top: 0.9rem;
-                cursor: pointer;
                 border: none;
+                padding: 0.5rem;
+                width: 90%;
+                max-width: 300px;
+                margin-top: 0.9rem;
+                color: white;
             }
-           
-           }
         }
+    }
 
-        .bottom-content{
-            padding: 0.5rem 0.9rem;
+    .danger-section{
+        margin-top: 4rem;
+        padding: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 470px){
+    .user-profile-section{
+        .welcome-div{
             display: flex;
             flex-direction: column;
-            button{
-                background-color: var(--first-color);
-                color: white;
-                padding: 0.5rem;
-                cursor: pointer;
-
-            }
+            align-items: flex-start;
+        }
+       
+        .button-container{
+            padding: 1rem;
+            margin-top: 2rem;
         }
 
-    }
-
-    
-    #close-product-modal{
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 0.9rem;
-        font-size: 1.2rem;
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-    }
-
-    #back-to-product{
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0.9rem;
-        font-size: 1.2rem;
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
     }
 }
 
-.loading-modal{
-    .loading-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0.9rem;
-        img{
-            width: 30px;
-            height: 30px;
-        }
 
-        p{
-            margin-top: 0.9rem;
-        }
-    }
-}
-
-.action-msg-alert-modal{
+.logout-modal{
     .action-container{
         display: flex;
         flex-direction: column;
@@ -343,11 +121,13 @@
             background-color: var(--first-color);
             color: white;
             padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
             margin-top: 0.9rem;
             cursor: pointer;
         }
+
+        .btn-logout{
+            background-color: rgb(255, 67, 67);
+        }
     }
 }
-
-
-

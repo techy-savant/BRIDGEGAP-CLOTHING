@@ -1349,6 +1349,109 @@ the website, in dark theme
   cursor: pointer;
 }
 
+.user-profile-section .welcome-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-profile-section .welcome-div .con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.9rem;
+}
+.user-profile-section .welcome-div .con .left i {
+  font-size: 1.5rem;
+}
+.user-profile-section .welcome-div .con .right {
+  display: flex;
+  flex-direction: column;
+}
+.user-profile-section .welcome-div .con .right h1 {
+  font-size: 1.8rem;
+}
+.user-profile-section .welcome-div .con .right p {
+  font-size: 0.9rem;
+}
+.user-profile-section .welcome-div .con .right .admin-conf {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.4rem;
+}
+.user-profile-section .welcome-div .con .right .admin-conf i {
+  color: green;
+  font-size: 0.8rem;
+}
+.user-profile-section .welcome-div .con .right .admin-conf p {
+  font-size: 0.8rem;
+}
+.user-profile-section .edit-profile-container {
+  padding: 1rem;
+  margin-top: 30px;
+}
+.user-profile-section .edit-profile-container #edit-profile-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.user-profile-section .edit-profile-container #edit-profile-form input[type=text] {
+  padding: 0.5rem;
+  outline: none;
+  width: 90%;
+  max-width: 300px;
+}
+.user-profile-section .edit-profile-container #edit-profile-form input[type=submit] {
+  background-color: var(--first-color);
+  border: none;
+  padding: 0.5rem;
+  width: 90%;
+  max-width: 300px;
+  margin-top: 0.9rem;
+  color: white;
+}
+.user-profile-section .danger-section {
+  margin-top: 4rem;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 470px) {
+  .user-profile-section .welcome-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .user-profile-section .button-container {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+}
+.logout-modal .action-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem;
+  text-align: center;
+}
+.logout-modal .action-container p {
+  color: black;
+}
+.logout-modal .action-container button {
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  margin-top: 0.9rem;
+  cursor: pointer;
+}
+.logout-modal .action-container .btn-logout {
+  background-color: rgb(255, 67, 67);
+}
+
 .signup-container {
   width: 100%;
   height: 100vh;

@@ -10,7 +10,7 @@ if(signupForm !== null){
     signupForm.addEventListener('submit', function(e){
         e.preventDefault()
      
-       
+        
         transitionModal('loading-modal')
         const endpoint = domain +'/api/signup/'
     
@@ -128,7 +128,7 @@ function goToLogin(){
 
 function redirectFromLogin(){
     if(returnData.is_staff){
-        window.location.href = '/profile.html'
+        window.location.href = '/admin.html'
     }
     else{
         window.location.href = '/index.html'
