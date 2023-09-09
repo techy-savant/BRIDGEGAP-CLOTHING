@@ -18,6 +18,7 @@ if(signupForm !== null){
         fetch(endpoint, {
             method: 'POST',
             body: formData,
+            credentials: 'include'
           
         })
         .then(response =>{
@@ -35,7 +36,7 @@ if(signupForm !== null){
         .then(data =>{
             data.message == undefined? alertActionMessage.textContent = 'Fatal: an error occured': alertActionMessage.textContent = data.message
             transitionModal('action-msg-alert-modal')
-            console.log(data.message)
+            console.log(data)
         })
         .catch(error =>{
             alertActionMessage.textContent = 'Something went wrong please try again'
@@ -62,11 +63,12 @@ if(loginform !== null){
         
         transitionModal('loading-modal')
         const endpoint = domain +'/api/login/'
-    
+        
         let formData = new FormData(this)
         fetch(endpoint, {
             method: 'POST',
-            body: formData
+            body: formData,
+            credentials: 'include'
         })
         .then(response =>{
             if(!response.ok){
