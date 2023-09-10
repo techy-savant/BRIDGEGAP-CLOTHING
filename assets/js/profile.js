@@ -3,6 +3,7 @@ const txtEmail = document.getElementById('txt-email')
 const adminConf = document.getElementById('admin-conf')
 const adminPanelButton = document.getElementById('admin-panel-button')
 const actionBtn= document.querySelector('.action-btn')
+const loadingInitial= document.querySelector('.loading-initial')
 
 const modals = document.querySelectorAll('.modal-box')
 const alertActionMessage = document.querySelector('.action-message')
@@ -26,10 +27,13 @@ document.addEventListener('DOMContentLoaded', function(){
     .then(response =>{
         if(!response.ok){
             console.log('error getting current user')
+            showMessageOnLoad('Error loading profile, please try again')
         }
         return response.json()
     })
     .then(data =>{
+        
+        removeInitalLoading()
         let greeting = `Hello ${data.user.username}!`
         txtGreet.textContent = greeting
         txtEmail.textContent = data.user.email 
@@ -43,6 +47,10 @@ document.addEventListener('DOMContentLoaded', function(){
             adminPanelButton.style.display = 'none'
            
         }
+    })
+    .catch(error =>{
+        console.log('Fetch error ', error)
+        showMessageOnLoad('Fatal: an error occured please contact your site administrator')
     })
     //== END FETCH THE CURRENT USER
 })
@@ -80,9 +88,9 @@ editProfileForm.addEventListener('submit', function(e){
     })
 })
 
-logoutBtn.addEventListener('click', function(e){
-    
 
+
+logoutBtn.addEventListener('click', function(e){
     transitionModal('logout-modal')
 })
 
@@ -126,3 +134,17 @@ logoutBtn.addEventListener('click', function(e){
         localStorage.removeItem('auth-token')
         location.reload()
     }
+
+
+    function showMessageOnLoad(message){
+        const loadingMessage = document.querySelector('.initial-loading-message')
+        const loadingProgress = document.querySelector('.loading-progress')
+
+        loadingProgress.style.display = 'none'
+        loadingMessage.textContent = message
+    }
+
+    function removeInitalLoading(){
+        loadingInitial.style.display = 'none'
+    }
+

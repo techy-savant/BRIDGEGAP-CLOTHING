@@ -1418,6 +1418,29 @@ the website, in dark theme
   padding: 1rem;
 }
 
+.loading-initial {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.loading-initial img {
+  width: 70px;
+  height: 70px;
+}
+.loading-initial p {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  padding: 1rem;
+  text-align: center;
+}
+
 @media screen and (max-width: 470px) {
   .user-profile-section .welcome-div {
     display: flex;
