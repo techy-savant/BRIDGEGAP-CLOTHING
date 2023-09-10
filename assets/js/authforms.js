@@ -5,6 +5,7 @@ const alertActionMessage = document.querySelector('.action-message')
 const domain = localStorage.getItem('domain')
 let readyToLogin = false
 let returnData
+let redirect = false
 
 if(signupForm !== null){
     signupForm.addEventListener('submit', function(e){
@@ -73,7 +74,12 @@ if(loginform !== null){
         .then(response =>{
             if(!response.ok){
                 console.log('error loggin in  user')
+                redirect = false
             }
+            else{
+                redirect = true
+            }
+
             return response.json()
         })
         .then(data =>{
@@ -127,11 +133,14 @@ function goToLogin(){
 }
 
 function redirectFromLogin(){
-    if(returnData.is_staff){
-        window.location.href = '/admin.html'
+    if(redirect){
+        if(returnData.is_staff){
+            window.location.href = '/admin.html'
+        }
+        else{
+            window.location.href = '/index.html'
+        }
     }
-    else{
-        window.location.href = '/index.html'
-    }
-    console.log(returnData)
+ 
+    
 }
