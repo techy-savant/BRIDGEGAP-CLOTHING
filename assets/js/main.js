@@ -1,4 +1,27 @@
+const contactBForm = document.getElementById('contact-b-form')
+const domain = localStorage.getItem('domain')
+contactBForm.addEventListener('submit', function(e){
+    e.preventDefault()
 
+    contactEndpoint = domain + '/api/contactbridgegap/'
+    let formData = new FormData(this)
+    fetch(contactEndpoint, {
+        method: 'POST',
+        body: formData
+    }).then(response =>{
+        if(!response.ok){
+            console.log('error sending contact email')
+        }
+        return response.json()
+    })
+    .then(data =>{
+        console.log(data)
+    })
+    .catch(error=>{
+        console.error('Fetch error ', error)
+    })
+    
+})
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
@@ -27,7 +50,7 @@ const dropbarItem = document.querySelectorAll('.dropdown-content a');
 
 const productSectionContainer = document.querySelector('.catalog-section-container')
 
-const domain = localStorage.getItem('domain')
+
 
 class Product{
     constructor(category, price, product_description, product_image, product_title, product_url, sub_category, category_title, sub_category_title){
@@ -216,7 +239,7 @@ window.addEventListener('scroll', scrollUp)
 
 /*=============== DARK LIGHT THEME ===============*/ 
 const themeButton = document.getElementById('theme-button')
-// const userIcon = document.getElementById('user-icon')
+
 
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'
@@ -247,15 +270,6 @@ themeButton.addEventListener('click', () => {
 })
 
 
-// userIcon.addEventListener('click', ()=>{
-//     loggedIn = localStorage.getItem('loggedIn')
-//     if(loggedIn){
-
-//     }
-//     else{
-//         window.location.href = '/login.html'
-//     }
-// })
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
