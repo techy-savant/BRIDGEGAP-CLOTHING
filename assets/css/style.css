@@ -1475,40 +1475,106 @@ the website, in dark theme
   background-color: rgb(255, 67, 67);
 }
 
-.signup-container {
+.form-container {
   width: 100%;
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.signup-container .content {
+.form-container .content {
   width: 90%;
   max-width: 350px;
   display: flex;
   flex-direction: column;
 }
-.signup-container .content .contact-inputs {
+.form-container .content .enter-email-prompt {
+  font-size: 0.9rem;
+  margin-top: 0.9rem;
+}
+.form-container .content .contact-inputs {
   margin-top: 40px;
 }
-.signup-container .content .submit-btn {
+.form-container .content .submit-btn {
   width: 100%;
   padding: 0.5rem;
   background-color: var(--first-color);
   color: white;
   border: none;
 }
-.signup-container .content .txt-question {
+.form-container .content .txt-question {
   margin-top: 0.9rem;
 }
 
 .forgot-password-container {
-  position: absolute;
-  bottom: 0;
-  padding: 2rem;
+  margin-top: 4rem;
 }
 .forgot-password-container p {
+  text-align: center;
   font-size: 0.9rem;
+}
+
+.cover-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.cover-screen .cover-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.cover-screen .cover-container .left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover-screen .cover-container .left img {
+  height: 300px;
+  width: 90%;
+  max-width: 300px;
+}
+.cover-screen .cover-container .right {
+  margin-left: 1rem;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.cover-screen .cover-container .right h1 {
+  font-size: 2.4rem;
+  color: rgb(5, 36, 40);
+}
+.cover-screen .cover-container .right p {
+  margin-top: 0.9rem;
+  width: 90%;
+  max-width: 450px;
+}
+.cover-screen .cover-container .right span {
+  color: blue;
+  cursor: pointer;
+}
+.cover-screen .cover-container .right .tips {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+}
+.cover-screen .cover-container .right .tips ul {
+  list-style: disc;
+}
+.cover-screen .cover-container .right .tips ul li {
+  font-size: 0.8rem;
+  padding: 0.45rem;
 }
 
 .denied-container {
@@ -1537,6 +1603,34 @@ the website, in dark theme
     margin-top: 1rem;
   }
 }
+.acct-con {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.acct-con .content {
+  width: 90%;
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.acct-con .content i {
+  font-size: 4rem;
+  color: var(--first-color);
+}
+.acct-con .content p {
+  margin-top: 1rem;
+  text-align: center;
+}
+.acct-con .content a {
+  margin-top: 2rem;
+}
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
@@ -1735,5 +1829,17 @@ the website, in dark theme
 @media screen and (max-width: 500px) {
   .profile-panel-section .product-panel .product-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 528px) {
+  .cover-screen .cover-container {
+    flex-direction: column;
+  }
+  .cover-screen .cover-container .left {
+    width: 100%;
+  }
+  .cover-screen .cover-container .right {
+    padding: 1rem;
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

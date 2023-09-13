@@ -277,3 +277,23 @@
         }
     }
 }
+
+
+
+// breakpoint for signup.scss cover-screen
+@media screen and (max-width: 528px){
+    .cover-screen{
+        .cover-container{
+            flex-direction: column;
+
+            .left{
+                width: 100%;
+            }
+
+            .right{
+                padding: 1rem;
+                width: 100%;
+            }
+        }
+    }
+}

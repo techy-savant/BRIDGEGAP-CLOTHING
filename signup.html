@@ -7,12 +7,16 @@
     <title>Sign up -Bridgegapclothing</title>
     <script src="assets/js/domainvar.js"></script>
 
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/bridgegap.svg" type="image/x-icon">
+    
     <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
 <body>
     
-    <section class="signup-container">
+    <section class="form-container">
 
         <div class="content">
             <h1>Sign up</h1>
@@ -63,6 +67,36 @@
             </div>
         </div>
    </div>
+
+   <div class="cover-screen" style="display: none;">
+    
+        <div class="cover-container">
+            <div class="left">
+                <img src="assets/img/email-aero.svg" alt="email">
+            </div>
+
+            <div class="right">
+                <h1>Thank you for signing up!</h1>
+                <p>Activate your account using the confirmation email at <b id="user-email-for-confirmation"></b> </p>
+
+                <div class="tips">
+                    <p>Note: If you do not recieve the email in a few minutes</p>
+
+                    <ul>
+                        <li>Check spam folder</li>
+                        <li>Verify that you have typed in the correct email</li>
+                        <li><span id="request-span" style="color: blue;">Request</span> a new confrimation mail </li>
+                        <li>If you cannot resolve the issue, please contact <a href="mailto:support@bridgegapclothing.com">support@bridgegapclothing.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <script src="/assets//js/authforms.js"></script>
 </body>
 </html>
