@@ -97,10 +97,13 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 function populateProductCards (productList){
     productList.forEach(function(product){
+        let categoryTitle = product.category_title
+        let lowerCategoryTitle = categoryTitle.toLowerCase()
         const categoryContainer = document.getElementById(product.category_title)
+
         if(categoryContainer){
             //this means an element with an id of the product category title already exists
-            const gridContainer= document.querySelector(`.${product.category_title}-pc`)
+            const gridContainer= document.querySelector(`.${lowerCategoryTitle}-pc`)
             let card = ` <div class="catl-card">
             <div class="top-card-content">
                 <div class="price-con">
@@ -122,10 +125,10 @@ function populateProductCards (productList){
         else{
             const catalogContainer = document.createElement('div')
             catalogContainer.className = 'catalog-container'
-            catalogContainer.id = product.category_title
+            catalogContainer.id = lowerCategoryTitle
 
             let divElement = ` <h2 class="catalog-header">${product.category_title}</h2>
-            <div class="catalog-content grid ${product.category_title}-pc">
+            <div class="catalog-content grid ${lowerCategoryTitle}-pc">
                 <div class="catl-card">
                     <div class="top-card-content">
                         <div class="price-con">
@@ -220,11 +223,11 @@ function scrollActive(){
               sectionTop = current.offsetTop - 58,
               sectionId = current.getAttribute('id')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
-        }
+        // if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+        //     document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
+        // }else{
+        //     document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        // }
     })
 }
 window.addEventListener('scroll', scrollActive)

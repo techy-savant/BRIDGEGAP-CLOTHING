@@ -15,6 +15,7 @@
   --text-color-light: hsl(var(--hue), 4%, 55%);
   --body-color: hsl(var(--hue), 0%, 100%);
   --container-color: #FFF;
+  --custom-red: rgb(255, 67, 67);
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
@@ -155,6 +156,33 @@ img {
 
 .modal-container.visible {
   display: flex;
+}
+
+.confirmation-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem;
+}
+.confirmation-modal .alert-message {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.confirmation-modal .action-btns {
+  margin-top: 0.9rem;
+}
+.confirmation-modal .action-btns button {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+}
+.confirmation-modal .action-btns .cancel-btn {
+  background-color: var(--first-color);
+  color: white;
+}
+.confirmation-modal .action-btns .continue-btn {
+  background-color: var(--custom-red);
+  color: white;
 }
 
 .catl-card {
@@ -1091,6 +1119,14 @@ the website, in dark theme
   max-lines: 1;
 }
 
+.panel {
+  display: none;
+}
+
+.panel.visible {
+  display: block;
+}
+
 .card {
   width: 90%;
   min-width: 100%;
@@ -1151,9 +1187,6 @@ the website, in dark theme
   color: white;
   padding: 0.6rem 0.9rem;
 }
-.profile-panel-section .product-panel {
-  margin-top: 50px;
-}
 .profile-panel-section .product-panel .p-header {
   display: flex;
   flex-direction: row;
@@ -1198,38 +1231,98 @@ the website, in dark theme
 }
 .profile-panel-section .product-panel .product-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, 150px);
   margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .profile-panel-section .product-panel .product-container .catl-card {
-  width: 100%;
+  width: 150px;
   padding: 0.5rem;
 }
+.profile-panel-section .product-panel .product-container .catl-card .top-card-content {
+  height: 150px;
+}
 .profile-panel-section .product-panel .product-container .catl-card .bottom-card-content {
-  padding-top: 0.9rem;
+  padding-top: 0.5rem;
   text-align: start;
 }
 .profile-panel-section .product-panel .product-container .catl-card .bottom-card-content p {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content b {
+  font-size: 0.7rem;
+  color: #303030;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .product-title {
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .product-description {
+  max-lines: 2;
   max-width: 90%;
   font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 0.9rem;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns svg {
+  width: 20px;
+  height: 20px;
 }
 .profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns button {
   margin: 0.45rem;
-  padding: 0.7rem;
   font-size: 0.8rem;
   cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 5px;
 }
-.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns .delete-btn {
-  background-color: red;
-  color: white;
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns .delete-btn svg {
+  fill: red;
+}
+.profile-panel-section .category-panel .category-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.profile-panel-section .category-panel .category-item button {
+  margin: 0.45rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+.profile-panel-section .category-panel .category-item button i {
+  color: red;
+}
+.profile-panel-section .sub-category-panel .sub-category-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0.9rem;
+}
+.profile-panel-section .sub-category-panel .sub-category-item .item-info #category-title {
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+}
+.profile-panel-section .sub-category-panel .sub-category-item button {
+  margin: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+.profile-panel-section .sub-category-panel .sub-category-item button i {
+  color: red;
 }
 
 .create-product-modal {
@@ -1313,6 +1406,28 @@ the website, in dark theme
   width: 20px;
   height: 20px;
   cursor: pointer;
+}
+
+.selection-container {
+  width: 100%;
+  margin-top: 50px;
+}
+.selection-container .content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.selection-container .content .selection-item {
+  cursor: pointer;
+  padding: 0.9rem;
+  color: black;
+  border-radius: 30px;
+  font-size: 0.7rem;
+}
+.selection-container .content .selection-item.active {
+  background-color: #accfbb;
 }
 
 .loading-modal .loading-container {
@@ -1452,29 +1567,6 @@ the website, in dark theme
     margin-top: 2rem;
   }
 }
-.logout-modal .action-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem;
-  text-align: center;
-}
-.logout-modal .action-container p {
-  color: black;
-}
-.logout-modal .action-container button {
-  background-color: var(--first-color);
-  color: white;
-  padding: 0.5rem 1.2rem;
-  font-size: 0.9rem;
-  margin-top: 0.9rem;
-  cursor: pointer;
-}
-.logout-modal .action-container .btn-logout {
-  background-color: rgb(255, 67, 67);
-}
-
 .form-container {
   width: 100%;
   min-height: 100vh;

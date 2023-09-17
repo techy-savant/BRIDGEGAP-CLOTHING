@@ -26,6 +26,12 @@ const prodSubCategorySelect=  document.getElementById('prod-sub-category-select'
 const uploadProductBtn = document.getElementById('upload-product-btn')
 
 const productContainer = document.getElementById('product-container')
+const selectionItems = document.querySelectorAll('.selection-item')
+const panels = document.querySelectorAll('.panel')
+
+const categoryPanel = document.getElementById('category-panel')
+const subCategoryPanel = document.getElementById('sub-category-panel')
+
 
 txtUsername = document.getElementById('txt-username')
 let formData;
@@ -37,9 +43,72 @@ let categoryList = []
 const authToken = localStorage.getItem('auth-token')
 
 class SubCategoryClass{
-    constructor(category, sub_category_title){
+    constructor(category, sub_category_title, id, category_title){
         this.category = category
         this.sub_category_title = sub_category_title
+        this.id = id
+        this.category_title = category_title
+    }
+
+    deleteSubCategory(){
+        transitionModal('loading-modal')
+        let itemId = this.id
+        let deleteSubCategoryEndpoint = domain + `/api/deletesubcategory/${itemId}`
+
+        fetch(deleteSubCategoryEndpoint, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if(!response.ok){
+                alertActionMessage.textContent = 'Error deleting sub category'
+                transitionModal('action-msg-alert-modal')
+            }
+            else{
+                alertActionMessage.textContent = `Sub category ${this.sub_category_title} deleted succesfully`
+                transitionModal('action-msg-alert-modal')
+            }
+        })
+        .catch(error => {
+            alertActionMessage.textContent = 'Error deleting sub category'
+            transitionModal('action-msg-alert-modal')
+            console.error('Fetch error', error)
+
+        })
+    }
+}
+
+class Catgory{
+    constructor(category_title, id){
+        this.category_title = category_title
+        this.id = id
+    }
+
+    /** Deletes a category from the database and from the list */
+    deleteCategory(){
+        transitionModal('loading-modal')
+        let itemId = this.id
+        let deleteCategoryEndpoint = domain + `/api/deletecategory/${itemId}`
+
+        fetch(deleteCategoryEndpoint, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if(!response.ok){
+                alertActionMessage.textContent = 'Error deleting category'
+                transitionModal('action-msg-alert-modal')
+            }
+            else{
+                alertActionMessage.textContent = `Category ${this.category_title} deleted succesfully`
+                transitionModal('action-msg-alert-modal')
+            }
+        })
+        .catch(error => {
+            alertActionMessage.textContent = 'Error deleting category'
+            transitionModal('action-msg-alert-modal')
+            console.error('Fetch error', error)
+
+        })
+       
     }
 }
 
@@ -61,6 +130,30 @@ class Product{
 
 let productList = []
 
+selectionItems.forEach(function(item){
+    item.addEventListener('click', selectSelection)
+})
+
+function selectSelection(e){
+    selectionItems.forEach(function(item){
+        item.classList.remove('active')
+    })
+
+    e.target.classList.add('active')
+    showPanel(e.target.id)
+}
+
+
+function showPanel(panelId){
+    panels.forEach(function(panel){
+        panel.classList.remove('visible')
+    })
+    let targetId = `${panelId}-panel`
+
+    const panelToShow = document.getElementById(targetId)
+    panelToShow.classList.add('visible')
+}
+
 
 backToProduct.addEventListener('click', function(){  
     createInputs.style.display = 'block'
@@ -69,7 +162,6 @@ backToProduct.addEventListener('click', function(){
 })
 
 document.addEventListener('DOMContentLoaded', function(){
-    console.log('content loaded')
     
     //===FETCH THE CURRENT USER
     const getuserendpoint = domain + '/api/getcurrentuser/'
@@ -107,13 +199,12 @@ document.addEventListener('DOMContentLoaded', function(){
     })
     .then(data => {
         data.forEach(function(item){
-            categoryList.push(item.category_title)
-
-            // const optionElement = document.createElement('option')
-            // optionElement.value = item.category_title
+            let categoryItem = new Catgory(item.category_title, item.id)
+            
+            categoryList.push(categoryItem)
         })
 
-        populateCategorySelect(categoryList)
+        populateCategoryViews(categoryList)
     })
     .catch(error => {
         console.error('Fetch error: ', error)
@@ -133,10 +224,10 @@ document.addEventListener('DOMContentLoaded', function(){
         return response.json()
     }).then(data =>{
         data.forEach(function(dataItem){
-            let subCategory = new SubCategoryClass(dataItem.category, dataItem.sub_category_title)
+            let subCategory = new SubCategoryClass(dataItem.category, dataItem.sub_category_title, dataItem.id, dataItem.category_title)
             subCategoryList.push(subCategory)
         })
-        populateSubCategorySelect(subCategoryList)
+        populateSubCategoryViews(subCategoryList)
     
     }).catch(error =>{
         console.error('Fetch error: ', error)
@@ -173,34 +264,73 @@ document.addEventListener('DOMContentLoaded', function(){
 
 })
 
-function populateCategorySelect(optionList){
+/** Used to populate all the views that needs the category list 
+ * this function deletes all children from respective parents and re-populates then using the
+ * items from @param OptionList
+ */
+function populateCategoryViews(optionList){
     while (categorySelect.firstChild) {
         categorySelect.removeChild(categorySelect.firstChild)
     }
     while(prodCategorySelect.firstChild){
         prodCategorySelect.removeChild(prodCategorySelect.firstChild)
     }
-    
-    
+
+    while(categoryPanel.firstChild){
+        categoryPanel.removeChild(categoryPanel.firstChild)
+    }
+
+
     optionList.forEach(function(optionItem){
         let optionElement = document.createElement('option')
-        optionElement.text = optionItem
-        optionElement.value = optionItem
+        optionElement.text = optionItem.category_title
+        optionElement.value = optionItem.category_title
         categorySelect.appendChild(optionElement)
 
         let prodCategoryOptionElement = document.createElement('option')
-        prodCategoryOptionElement.text = optionItem
-        prodCategoryOptionElement.value = optionItem
+        prodCategoryOptionElement.text = optionItem.category_title
+        prodCategoryOptionElement.value = optionItem.category_title
         prodCategorySelect.appendChild(prodCategoryOptionElement)
+
+        
+        let categoryItem = ` <div class="category-item">
+        <p id="category-title">${optionItem.category_title}</p>
+        <button class="delete-btn delete-category" id="${optionItem.id}"><i class="ri-delete-bin-line"></i></button>       
+    </div>`
+   
+    categoryPanel.innerHTML += categoryItem
 
     })
 
+    const deleteItems = document.querySelectorAll('.delete-category')
+    deleteItems.forEach(function(deleteBtn){
+        deleteBtn.addEventListener('click', function(e){
+            let itemId = deleteBtn.id
+            item = optionList.find(value=> value.id == itemId)
+            let message =  `Sure to delete ${item.category_title}? all products and sub categories related to this category will also be deleted!`
+            setUpConfirmationModal(message, function(e){
+                item.deleteCategory()
+            })
+        })
+        
+       
+    })
+
+    
 }
 
-function populateSubCategorySelect(optionList){
+/** Used to populate all the views that needs the sub category list 
+ * this function deletes all children from respective parents and re-populates then using the
+ * items from @param OptionList
+ */
+function populateSubCategoryViews(optionList){
     
     while(prodSubCategorySelect.firstChild){
         prodSubCategorySelect.removeChild(prodSubCategorySelect.firstChild)
+    }
+
+    while(subCategoryPanel.firstChild){
+        subCategoryPanel.removeChild(subCategoryPanel.firstChild)
     }
 
     optionList.forEach(function(optionItem){
@@ -209,26 +339,54 @@ function populateSubCategorySelect(optionList){
         opl.value = optionItem.sub_category_title
         prodSubCategorySelect.appendChild(opl)
         
+        
+        bodyItem = ` <div class="sub-category-item">
+        <div class="item-info">
+            <p id="sub-category-title"><b>${optionItem.sub_category_title}</b></p>
+            <p id="category-title">${optionItem.category_title}</p>
+        </div>
+        <button class="delete-btn delete-sub-category" id="${optionItem.id}"><i class="ri-delete-bin-line"></i></button>       
+    </div> `
+
+    subCategoryPanel.innerHTML += bodyItem
+        
     })
+
+
+    const deleteItems = document.querySelectorAll('.delete-sub-category')
+    deleteItems.forEach(function(deleteBtn){
+        deleteBtn.addEventListener('click', function(e){
+            let itemId = deleteBtn.id
+            item = optionList.find(value=> value.id == itemId)
+            let message =  `Sure to delete ${item.category_title}? all products related to this sub category will also be lost!`
+            setUpConfirmationModal(message, function(e){
+                item.deleteSubCategory()
+            })
+        })
+        
+       
+    })
+    
 }
+
 
 function populateProductCards (productList){
     productList.forEach(function(product){
-      let card =   `<div class="catl-card">
+      let card =   `  <div class="catl-card">
       <div class="top-card-content">
           <img src="${product.product_image}" alt="">
           <div class="overlay"></div>
       </div>
       <div class="bottom-card-content">
-          <h3>${product.product_title}</h3>
+          <h3 class="product-title">${product.product_title}</h3>
           <p class="product-description">${product.product_description} </p>
           <p class="product-price"><b>Price: </b> ${product.price}</p>
           <p><b>Category: </b >${product.category_title}</p>
           <p><b>Sub category: </b>${product.sub_category_title}</p>
 
           <div class="action-btns">
-              <button class="edit-btn">Edit</button>
-              <button class="delete-btn">Delete</button>
+              <button class="edit-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.41421 15.89L16.5563 5.74786L15.1421 4.33365L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6474L14.435 2.21233C14.8256 1.8218 15.4587 1.8218 15.8492 2.21233L18.6777 5.04075C19.0682 5.43128 19.0682 6.06444 18.6777 6.45497L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z"></path></svg></button>
+              <button class="delete-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"></path></svg></button>
           </div>
       </div>
   </div>`
@@ -237,9 +395,11 @@ function populateProductCards (productList){
     })
 }
 
+
 uploadProductBtn.addEventListener('click', function(e){
     uploadProduct(formData)
 })
+
 
 //when the productinfo form is submitted
 productInfoForm.addEventListener('submit', function(e){
@@ -271,33 +431,6 @@ productInfoForm.addEventListener('submit', function(e){
 
 })
 
-function uploadProduct(formData){
-    if(formData !== null){
-        productEndPoint = domain +'/api/create-product/'
-
-        fetch(productEndPoint, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                Authorization: `Token ${authToken}`
-            }
-        })
-        .then(response =>{
-            if(!response.ok){
-                console.log('error creating products')
-            }
-            return response.json()
-        })
-        .then(data =>{
-            alertActionMessage.textContent = data.message
-            transitionModal('action-msg-alert-modal')
-            console.log(data.message)
-        })
-        .catch(error =>{
-            console.error('Create product error: ', error)
-        })
-    }
-}
 
 //when the create category form is submitted
 createCategoryForm.addEventListener('submit', function(e){
@@ -305,7 +438,6 @@ createCategoryForm.addEventListener('submit', function(e){
     transitionModal('loading-modal')
     let formData = new FormData(this)
     let endpoint = domain + '/api/create-category/'
-    console.log(authToken)
     fetch(endpoint, {
         method : 'POST',
         body: formData,
@@ -322,14 +454,10 @@ createCategoryForm.addEventListener('submit', function(e){
     .then(data =>{
         alertActionMessage.textContent = data.message
         transitionModal('action-msg-alert-modal')
-        categoryList.push(data.content.category_title)
+        categoryList.push(data.content)
 
-        // const optionElement = document.createElement('option')
-        // optionElement.text = data.content.category_title
-        // optionElement.value = data.content.category_title
-        // categorySelect.appendChild(optionElement)
         
-        populateCategorySelect( categoryList)
+        populateCategoryViews( categoryList)
     })
     .catch(error =>{
         console.error('Fetch error: ',error)
@@ -342,9 +470,9 @@ createSubCatForm.addEventListener('submit', function(e){
     transitionModal('loading-modal')
     let formData = new FormData(this)
 
-    formData.forEach(function(value, key) {
-        console.log( key + ': ' + value);
-    });
+    // formData.forEach(function(value, key) {
+    //     console.log( key + ': ' + value);
+    // });
 
     let endpoint = domain + '/api/create-sub-category/'
     fetch(endpoint, {
@@ -365,9 +493,9 @@ createSubCatForm.addEventListener('submit', function(e){
         alertActionMessage.textContent = data.message
         transitionModal('action-msg-alert-modal')
 
-        let subCategory = new SubCategoryClass(data.content.category, data.content.sub_category_title)
+        let subCategory = new SubCategoryClass(data.content.category, data.content.sub_category_title, data.content.id)
         subCategoryList.push(subCategory)
-        populateSubCategorySelect(subCategoryList)
+        populateSubCategoryViews(subCategoryList)
     })
     .catch(error =>{
         console.error('Fetch error: ' , error)
@@ -388,6 +516,7 @@ createSubCatForm.addEventListener('submit', function(e){
 function transitionModal(className){
     modals.forEach(function(modalBox){
         modalBox.classList.remove('visible')
+        
     })
 
     if(className == 'none'){
@@ -410,4 +539,52 @@ function transitionModal(className){
     }
 
     
+}
+
+/** This function shows the confirmation modal using the parameters passed to customize it 
+ * @param message the confimation message
+ * @param clickFunction A function with will be executed when the continue button of the modal is clicked
+ */
+function setUpConfirmationModal(message, clickFunction){
+    const confirmationModal = document.getElementById('confirmation-modal')
+    const messageElemnt = confirmationModal.querySelector('.alert-message')
+    const continueButton = confirmationModal.querySelector('.continue-btn')
+
+    continueButton.onclick = clickFunction
+
+    messageElemnt.textContent = message
+
+    //showing the confirmation modal
+    transitionModal('confirmation-modal')
+}
+
+
+/** uploads a product to the database
+ * @param formData The formdata used to fetch the details of the product to be uploaded
+ */
+function uploadProduct(formData){
+    if(formData !== null){
+        productEndPoint = domain +'/api/create-product/'
+
+        fetch(productEndPoint, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                Authorization: `Token ${authToken}`
+            }
+        })
+        .then(response =>{
+            if(!response.ok){
+                console.log('error creating products')
+            }
+            return response.json()
+        })
+        .then(data =>{
+            alertActionMessage.textContent = data.message
+            transitionModal('action-msg-alert-modal')
+        })
+        .catch(error =>{
+            console.error('Create product error: ', error)
+        })
+    }
 }

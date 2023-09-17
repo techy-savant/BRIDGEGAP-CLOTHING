@@ -109,10 +109,42 @@ img{
     display: flex;
 }
 
+.confirmation-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem;
+
+    .alert-message{
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .action-btns{
+        margin-top: 0.9rem;
+        button{
+            padding: 0.5rem 0.9rem;
+            font-size: 0.9rem;
+        }
+
+        .cancel-btn{
+            background-color: var(--first-color);
+            color: white;
+        }
+
+        .continue-btn{
+            background-color: var(--custom-red);
+            color: white;
+        }
+    }
+}
+
 
 .catl-card{
     width: 100%;
     padding: 0.5rem;
+
     
     .top-card-content{
         background-color: #ebecee;

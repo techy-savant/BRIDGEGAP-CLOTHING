@@ -133,30 +133,30 @@
 }
 
 
-.logout-modal{
-    .action-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0.9rem;
-        text-align: center;
-        p{
-            color: black;
-        }
+// .logout-modal{
+//     .action-container{
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//         padding: 0.9rem;
+//         text-align: center;
+//         p{
+//             color: black;
+//         }
 
-        button{
-            background-color: var(--first-color);
-            color: white;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.9rem;
-            margin-top: 0.9rem;
-            cursor: pointer;
-        }
+//         button{
+//             background-color: var(--first-color);
+//             color: white;
+//             padding: 0.5rem 1.2rem;
+//             font-size: 0.9rem;
+//             margin-top: 0.9rem;
+//             cursor: pointer;
+//         }
 
-        .btn-logout{
-            background-color: rgb(255, 67, 67);
-        }
-    }
-}
+//         .btn-logout{
+//             background-color: rgb(255, 67, 67);
+//         }
+//     }
+// }
 

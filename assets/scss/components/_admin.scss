@@ -1,3 +1,7 @@
+$bas_width: 150px;
+
+
+
 .user{
     display: flex;
     flex-direction: row;
@@ -24,6 +28,14 @@
         max-lines: 1;
 
     }
+}
+
+.panel{
+    display: none;
+}
+
+.panel.visible{
+    display: block;
 }
 
 .card{
@@ -109,7 +121,7 @@
 
     .product-panel{
         
-        margin-top: 50px;
+        // margin-top: 50px;
         
       
         .p-header{
@@ -163,48 +175,142 @@
             }
         }
 
-       
+      
 
         .product-container{
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, $bas_width);
             margin-top: 20px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
              .catl-card{
-                 width: 100%;
+                 width: $bas_width;
                  padding: 0.5rem;
-       
+
+                 .top-card-content{
+                    height: $bas_width;
+                 }
+
+                
                  .bottom-card-content{
-                     padding-top: 0.9rem;
+                     padding-top: 0.5rem;
                      text-align: start;
 
                      p{
-                        margin-top: 0.5rem;
-                     }
- 
-                     .product-description{
-                        max-width: 90%;
+                        margin-top: 0.25rem;
                         font-size: 0.75rem;
                      }
 
+                     b{
+                        font-size: 0.7rem;
+                        color: #303030;
+                     }
+ 
+                     .product-title{
+                        width: 90%;
+                        overflow:hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                     }
+
+                     .product-description{
+                        max-lines: 2;
+                        max-width: 90%;
+                        font-size: 0.75rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        
+                     }
+
+                    
+
                      .action-btns{
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: row;
                         margin-top: 0.9rem;
+
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                        }
                         button{
                             margin: 0.45rem;
-                            padding: 0.7rem;
                             font-size: 0.8rem;
                             cursor: pointer;
+                            padding: 0.25rem;
+                            border-radius: 5px;
                         }
 
                         .delete-btn{
-                            background-color: red;
-                            color: white;
+                            svg{
+                                fill:red;
+                            }
                         }
+
+                        
                      }
                  }
              }
  
+        }
+    }
+
+    .category-panel{
+        .category-item{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            button{
+                margin: 0.45rem;
+                font-size: 0.8rem;
+                cursor: pointer;
+                padding: 0.25rem;
+                border-radius: 5px;
+                
+                i{
+                    color: red;
+                }
+
+            }
+
+          
+        }
+
+
+    }
+
+    .sub-category-panel{
+        .sub-category-item{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 0.9rem;
+
+            .item-info{
+                #category-title{
+                    font-size: 0.8rem;
+                    margin-top: 0.1rem;
+                }
+            }
+
+            button{
+                margin: 0.45rem 0.9rem;
+                font-size: 0.8rem;
+                cursor: pointer;
+                padding: 0.25rem;
+                border-radius: 5px;
+                
+                
+                i{
+                    color: red;
+                }
+
+            }
+
+          
         }
     }
 }
@@ -308,6 +414,32 @@
         cursor: pointer;
     }
 }
+
+.selection-container{
+        width: 100%;
+        margin-top: 50px;
+
+        .content{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+
+            .selection-item{
+                cursor: pointer;
+                padding: 0.9rem;
+                color: black;
+                border-radius: 30px;
+                font-size: 0.7rem;
+            }
+
+            .selection-item.active{
+                background-color: #accfbb;
+            }
+        }
+   }
 
 .loading-modal{
     .loading-container{

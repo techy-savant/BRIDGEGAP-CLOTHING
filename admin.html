@@ -67,7 +67,23 @@
                 </div>
             </div>
 
-            <div class="product-panel card">
+            <div class="selection-container card">
+                <div class="content">
+                    <div class="selection-item" id="category">
+                        Categories
+                    </div>
+
+                    <div class="selection-item" id="sub-category">
+                        Sub categories
+                    </div>
+
+                    <div class="selection-item active" id="products">
+                        Products
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-panel card panel visible" id="products-panel">
                 <div class="p-header">
                     <h3>Products</h3>
                     <div class="right-container">
@@ -93,21 +109,22 @@
                
                 <div class="product-list-container">
                     <div class="product-container" id="product-container">
+
                         <!-- <div class="catl-card">
                             <div class="top-card-content">
-                                <img src="/assets/img/bridge1.png" alt="">
+                                <img src="${product.product_image}" alt="">
                                 <div class="overlay"></div>
                             </div>
                             <div class="bottom-card-content">
-                                <h3>Male suit</h3>
-                                <p class="product-description">Blue male suit with red tie tailored using premium cotton </p>
-                                <p class="product-price"><b>Price: </b>₦1500</p>
-                                <p><b>Category: </b >Men</p>
-                                <p><b>Sub category: </b>Native</p>
-
+                                <h3 class="product-title">${product.product_title}</h3>
+                                <p class="product-description">${product.product_description} </p>
+                                <p class="product-price"><b>Price: </b> ${product.price}</p>
+                                <p><b>Category: </b >${product.category_title}</p>
+                                <p><b>Sub category: </b>${product.sub_category_title}</p>
+                      
                                 <div class="action-btns">
-                                    <button class="edit-btn">Edit</button>
-                                    <button class="delete-btn">Delete</button>
+                                    <button class="edit-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.41421 15.89L16.5563 5.74786L15.1421 4.33365L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6474L14.435 2.21233C14.8256 1.8218 15.4587 1.8218 15.8492 2.21233L18.6777 5.04075C19.0682 5.43128 19.0682 6.06444 18.6777 6.45497L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z"></path></svg></button>
+                                    <button class="delete-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"></path></svg></button>
                                 </div>
                             </div>
                         </div> -->
@@ -117,9 +134,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="category-panel card panel" id="category-panel">
+                <!-- <div class="category-item">
+                    <p id="category-title">${optionItem}</p>
+                    <button class="delete-btn delete-category" id="del-cat-1"><i class="ri-delete-bin-line"></i></button>       
+                </div> -->
+            </div>
+
+            <div class="sub-category-panel card panel" id="sub-category-panel">
+                <!-- <div class="sub-category-item">
+                    <div class="item-info">
+                        <p id="sub-category-title"><b>${optionItem.sub_category_title}</b></p>
+                        <p id="category-title">${optionItem.category_title}</p>
+                    </div>
+                    <button class="delete-btn delete-sub-category" id="${optionItem.id}"><i class="ri-delete-bin-line"></i></button>       
+                </div> -->
+            </div>
         </section>
     </main>
-
 
 
     <div class="modal-container">
@@ -194,12 +227,20 @@
                 <button class="action-btn" onclick="transitionModal('none')">Ok</button>
             </div>
         </div>
+
+        <div class="modal-box confirmation-modal" id="confirmation-modal">
+            <p class="alert-message" id="alert-message">blank</p>
+            <div class="action-btns">
+                <button class="cancel-btn"  onclick="transitionModal('none')"> Cancel</button>
+                <button class="continue-btn" id="continue-btn">Delete</button>
+            </div>
+        </div>
    </div>
    
 
 </div>
 
-   
+    
     <script src="/assets/js/admin.js"></script>
 </body>
 </html>
