@@ -115,7 +115,7 @@ class Catgory{
 let subCategoryList =[]
 
 class Product{
-    constructor(category, price, product_description, product_image, product_title, product_url, sub_category, category_title, sub_category_title){
+    constructor(category, price, product_description, product_image, product_title, product_url, sub_category, category_title, sub_category_title, id){
         this.category = category
         this.price= price
         this.product_description = product_description
@@ -125,7 +125,36 @@ class Product{
         this.sub_category = sub_category
         this.category_title = category_title
         this.sub_category_title = sub_category_title
+        this.id= id
     }
+
+    deleteProduct(){
+        transitionModal('loading-modal')
+        let itemId = this.id
+        let deleteCategoryEndpoint = domain + `/api/deleteproduct/${itemId}`
+
+        fetch(deleteCategoryEndpoint, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if(!response.ok){
+                alertActionMessage.textContent = 'Error deleting product'
+                transitionModal('action-msg-alert-modal')
+            }
+            else{
+                alertActionMessage.textContent = `Product ${this.product_title} deleted succesfully`
+                transitionModal('action-msg-alert-modal')
+            }
+        })
+        .catch(error => {
+            alertActionMessage.textContent = 'Error deleting product'
+            transitionModal('action-msg-alert-modal')
+            console.error('Fetch error', error)
+
+        })
+       
+    }
+
 }
 
 let productList = []
@@ -162,7 +191,7 @@ backToProduct.addEventListener('click', function(){
 })
 
 document.addEventListener('DOMContentLoaded', function(){
-    
+
     //===FETCH THE CURRENT USER
     const getuserendpoint = domain + '/api/getcurrentuser/'
     let user;
@@ -249,7 +278,8 @@ document.addEventListener('DOMContentLoaded', function(){
         data.forEach(function(item){
             let product = new Product(item.category, item.price,
                 item.product_description, item.product_image, item.product_title, item.product_url, item.sub_category,
-                item.category_title, item.sub_category_title)
+                item.category_title, item.sub_category_title, item.id)
+
             productList.push(product)
         })
 
@@ -372,27 +402,45 @@ function populateSubCategoryViews(optionList){
 
 function populateProductCards (productList){
     productList.forEach(function(product){
-      let card =   `  <div class="catl-card">
-      <div class="top-card-content">
-          <img src="${product.product_image}" alt="">
-          <div class="overlay"></div>
-      </div>
-      <div class="bottom-card-content">
-          <h3 class="product-title">${product.product_title}</h3>
-          <p class="product-description">${product.product_description} </p>
-          <p class="product-price"><b>Price: </b> ${product.price}</p>
-          <p><b>Category: </b >${product.category_title}</p>
-          <p><b>Sub category: </b>${product.sub_category_title}</p>
-
-          <div class="action-btns">
-              <button class="edit-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.41421 15.89L16.5563 5.74786L15.1421 4.33365L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6474L14.435 2.21233C14.8256 1.8218 15.4587 1.8218 15.8492 2.21233L18.6777 5.04075C19.0682 5.43128 19.0682 6.06444 18.6777 6.45497L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z"></path></svg></button>
-              <button class="delete-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"></path></svg></button>
-          </div>
-      </div>
-  </div>`
+    let card =   `<div class="catl-card">
+                            <div class="top-card-content">
+                                <img src="${product.product_image}" alt="">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="bottom-card-content">
+                                <h3 class="product-title">${product.product_title}</h3>
+                                <p class="product-description">${product.product_description} </p>
+                                <p class="product-price"><b>Price: </b> ${product.price}</p>
+                                <p><b>Category: </b >${product.category_title}</p>
+                                <p><b>Sub category: </b>${product.sub_category_title}</p>
+                      
+                                <div class="action-btns">
+                                    <button class="edit-btn"><i class="ri-edit-line"></i></button>
+                                    <button class="delete-btn delete-product" id="${product.id}"><i class="ri-delete-bin-line"></i></button>
+                                </div>
+                            </div>
+                        </div>`
 
     productContainer.innerHTML += card
+
+   
     })
+
+
+    const deleteItems = document.querySelectorAll('.delete-product')
+    deleteItems.forEach(function(deleteBtn){
+        deleteBtn.addEventListener('click', function(e){
+            let itemId = deleteBtn.id
+            item = productList.find(value=> value.id == itemId)
+            let message =  `Sure to delete ${item.product_title}?`
+            setUpConfirmationModal(message, function(e){
+                item.deleteProduct()
+            })
+        })
+        
+       
+    })
+
 }
 
 

@@ -1279,6 +1279,9 @@ the website, in dark theme
   width: 20px;
   height: 20px;
 }
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns i {
+  font-size: 1.2rem;
+}
 .profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns button {
   margin: 0.45rem;
   font-size: 0.8rem;
@@ -1288,6 +1291,9 @@ the website, in dark theme
 }
 .profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns .delete-btn svg {
   fill: red;
+}
+.profile-panel-section .product-panel .product-container .catl-card .bottom-card-content .action-btns .delete-btn i {
+  color: red;
 }
 .profile-panel-section .category-panel .category-item {
   display: flex;
