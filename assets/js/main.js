@@ -99,7 +99,7 @@ function populateProductCards (productList){
     productList.forEach(function(product){
         let categoryTitle = product.category_title
         let lowerCategoryTitle = categoryTitle.toLowerCase()
-        const categoryContainer = document.getElementById(product.category_title)
+        const categoryContainer = document.getElementById(lowerCategoryTitle)
 
         if(categoryContainer){
             //this means an element with an id of the product category title already exists
@@ -109,7 +109,7 @@ function populateProductCards (productList){
                 <div class="price-con">
                     <p>${product.price}</p>
                 </div>
-                <img src="${product.product_image}" alt="">
+                <img src="${product.product_image}" alt="" loading="lazy">
                 <div class="overlay"></div>
 
             </div>
@@ -134,7 +134,7 @@ function populateProductCards (productList){
                         <div class="price-con">
                             <p>${product.price}</p>
                         </div>
-                        <img src="${product.product_image}" alt="">
+                        <img src="${product.product_image}" alt="" loading="lazy">
                         <div class="overlay"></div>
 
                     </div>
