@@ -1,18 +1,16 @@
 # BRIDGEGAP-CLOTHING
 A fashion design company's landing page
 
-### [Live Site](https://bridgegapclothing.com/)
+## About
+This is a code repository for the Bridgegap Clothing Company.
+<br>
+Built with `Sass` and `Django`
 
-![Chat Application](https://imgur.com/a/3o9PzHE)
 
-## Introduction
-This is a code repository for the corresponding video tutorial. 
 
-In this video, we will create a full Realtime Chat Application. We're going to use  React on the front end, with NodeJS + Socket.io web socket library on the back end. 
+![bridgegap image](https://github.com/techy-savant/BRIDGEGAP-CLOTHING/assets/108519575/262e8b6e-ff03-4d04-a2ff-baebadd0d991)
 
-By the end of this video, you will have a strong understanding of how to send and receive messages using web sockets and Socket.io to make any real-time application.
+### Live Site: [bridgegapclothing.com](https://bridgegapclothing.com/)
 
-## Launch your development career with project-based coaching - https://www.jsmastery.pro
 
-Setup:
-- run ```npm i && npm start``` for both client and server side to start the development server
+
