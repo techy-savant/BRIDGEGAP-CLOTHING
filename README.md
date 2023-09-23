@@ -1,5 +1,5 @@
 # BRIDGEGAP-CLOTHING
-A fashion design company's landing page
+A fashion design company's product website
 
 ## About
 This is a code repository for the Bridgegap Clothing Company.
