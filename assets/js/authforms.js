@@ -133,7 +133,6 @@ if(loginform !== null){
             else{
                 redirect = true
             }
-
             return response.json()
         })
         .then(data =>{

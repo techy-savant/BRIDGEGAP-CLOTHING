@@ -19,7 +19,6 @@ fetch(getUserEndpoint, {
 .then(data =>{
     user= data.user
     if (!data.user.is_staff){
-      
         window.location.href = '/denied.html'
     }
 })
