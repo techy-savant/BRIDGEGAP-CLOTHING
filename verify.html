@@ -17,12 +17,14 @@
     
     <section class="email-verified-container acct-con" id="verf-success-section">
         <div class="content">
-            <i class="ri-checkbox-circle-line"></i>
-            <p>Hurray! your email is verified, you can now login to your newly created account. Thanks for choosing Bridgegapclothing</p>
+            <!-- <i class="ri-checkbox-circle-line"></i> -->
+            <img src="assets/img/welcomeuser.svg" alt="Account verified succesfully">
+
+            <p>Hurray! your email is verified, welcome to the Bridgegap family, you can now login to your newly created account. Thanks for choosing Bridgegapclothing</p>
             
             
-            <a href="/login.html" class="button button--flex">
-                Login <svg class="button-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg>
+            <a href="/login.html" class="button button--flex" style="width: 100%; justify-content: space-between;">
+                Login to my account<svg class="button-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg>
             </a>
         </div>
     </section>
@@ -30,12 +32,13 @@
 
     <section class="verification-failed-container acct-con" id="verf-failed-section">
         <div class="content">
-            <i class="ri-emotion-sad-line"></i>
-            <p>Sorry, your account could not be verified, this could be as a result of an expired or already used verification link </p>
+            <!-- <i class="ri-emotion-sad-line"></i> -->
+            <img src="assets/img/clueless.svg" alt="Something went wrong">
+            <p>Oops.. that link didnt work. Please note that this can be as a result of an expired or previously used link, click the button below to get a new link and try again</p>
             
 
-            <a href="/resend-activation.html" class="button button--flex">
-                Get a new link 
+            <a href="/resend-activation.html" class="button button--flex" style="width: 100%; justify-content: space-between;">
+                Get a new link <svg class="button-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg>
             </a>
         
         </div>
@@ -44,7 +47,7 @@
 
     
     
-    <div class="loading-initial">
+    <div class="loading-initial" style="display: none;">
         <img src="assets/img/loading.gif" alt="loading" class="loading-progress">
         <p class="initial-loading-message"> </p>
     </div>

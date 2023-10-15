@@ -11,7 +11,7 @@ const domain = localStorage.getItem('domain')
 const validateEndpoint = domain + `/api/validateuser?uidb64=${uidb64}&token=${token}`
 
 fetch(validateEndpoint, {
-    method: 'POST'
+    method: 'GET'
 })
 .then(response =>{
     if(!response.ok){
