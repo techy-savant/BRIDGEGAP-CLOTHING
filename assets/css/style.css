@@ -794,6 +794,33 @@ the website, in dark theme
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.showcase-landing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100vh;
+}
+.showcase-landing .left-content {
+  width: 90%;
+  max-width: 500px;
+}
+.showcase-landing .left-content img {
+  border-radius: 10px;
+  width: 100%;
+  height: 500px;
+  background-color: #ebecee;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.showcase-landing .right-content {
+  margin-left: 20px;
+}
+.showcase-landing .right-content h1 {
+  font-size: 4rem;
+}
+
 /*=============== questions ===============*/
 .questions {
   background-color: var(--first-color-lighten);

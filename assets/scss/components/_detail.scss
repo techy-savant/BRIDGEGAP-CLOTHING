@@ -1,0 +1,30 @@
+.showcase-landing{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 100vh;
+   
+
+    .left-content{
+        width: 90%;
+        max-width: 500px;
+      
+       
+        img{
+            border-radius: 10px;
+            width: 100%;
+            height: 500px;
+            background-color: #ebecee;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+
+    .right-content{
+        margin-left: 20px;
+        h1{
+            font-size: 4rem;
+        }
+    }
+}
